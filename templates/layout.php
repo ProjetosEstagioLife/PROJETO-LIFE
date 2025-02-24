@@ -16,7 +16,7 @@
         <?php echo $content; ?>
     </main>
 
-    <footer>
+    <footer pt-5>
         <p>Copyright 2025 - Life. Todos os direitos reservados.</p>
     </footer>
 
