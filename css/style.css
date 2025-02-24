@@ -13,10 +13,11 @@
 /* Configurações padrão */
 body {
     font-family: "Comfortaa", sans-serif;
-    background: #ec7a23 url("../Midias/background_menu.png") no-repeat center center fixed;
+    background: #ec7a23 url("../Midias/background_menu.png") no-repeat top center fixed;
     background-size: cover; /* Garante que a imagem cubra toda a tela */
     overflow: hidden;
     min-height: 100vh; /* Garante que o body ocupe pelo menos 100% da altura da tela */
+    
 }
 /* Tela inicial */
 #welcomeWindow {
@@ -28,13 +29,23 @@ body {
     align-items: center;
     text-align: center;
     padding: 5%;
+    color: #000;
 }
 #welcomeWindow img {
     width: 4rem;
     max-width: 100px;
 }
+#logoContainer{
+    width: 20vw;
+    height: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: baseline;
+}
 #welcomeWindow p {
     font-size: 1.5rem;
+    margin: 0 0 1% 3%;
 }
 #welcomeWindow h1 {
     font-size: 4rem;
@@ -68,6 +79,7 @@ body {
     border-radius: 30px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    color: #000;
 }
 #loginWindow h2 {
     font-size: 2rem;
@@ -133,13 +145,12 @@ body {
 }
 
 /* Rodapé */
-footer {
-    text-align: center;
-    font-weight: bold;
+footer{
+    text-align: end;
+    font-weight: bolder;
     position: absolute;
     bottom: 1%;
-    width: 100%;
-    padding: 0.5rem;
+    right: 1%;
 }
 
 /* Esconder elementos quando necessário */
@@ -187,6 +198,7 @@ footer {
 
     #welcomeWindow p {
         font-size: 1.2rem;
+        margin: 0 0 1% 7%;
     }
 
     #welcomeWindow span {
@@ -219,5 +231,8 @@ footer {
     #loginSubmit {
         width: 80%;
         font-size: 1rem;
+    }
+    footer{
+        font-size: 0.7rem;
     }
 }
