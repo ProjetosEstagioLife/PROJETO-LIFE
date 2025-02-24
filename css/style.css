@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+/* Mini reset */
+* {
+    font-size: 100%;
+    font-style: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações padrão */
+body {
+    font-family: "Comfortaa", sans-serif;
+    background: #ec7a23 url("../Midias/background_menu.png") no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem cubra toda a tela */
+    overflow: hidden;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos 100% da altura da tela */
+}
+/* Tela inicial */
+#welcomeWindow {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+}
+#welcomeWindow img {
+    width: 4rem;
+    max-width: 100px;
+}
+#welcomeWindow p {
+    font-size: 1.5rem;
+}
+#welcomeWindow h1 {
+    font-size: 4rem;
+    max-width: 80%;
+    text-align: center;
+}
+#welcomeWindow span {
+    font-size: 1.2rem;
+    margin-top: 4%;
+    animation: blinker 2s linear infinite;
+}
+
+/* Animação piscar */
+@keyframes blinker {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Tela de login */
+#loginWindow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    padding: 2rem;
+    border: 3px solid #000;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+#loginWindow h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#underline {
+    width: 30%;
+    height: 3px;
+    background-color: #000;
+    border-radius: 25px;
+    margin: 0 auto 1.5rem auto;
+}
+
+#loginWindow form {
+    display: flex;
+    flex-direction: column;
+}
+#loginWindow label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+#loginWindow input:not(#loginSubmit) {
+    height: 3rem;
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+#forgotPassword {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 1rem;
+    align-self: flex-end;
+}
+#forgotPassword:hover {
+    transform: scale(1.05);
+    color: #ec7a23;
+    text-shadow: #000 0 8px 10px;
+}
+#loginSubmit {
+    height: 3rem;
+    font-size: 1.2rem;
+    margin: 1.5rem auto;
+    width: 60%;
+    border-radius: 30px;
+    border: 3px solid #000;
+    background-color: #ec7a23;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+#loginSubmit:hover {
+    color: #fff;
+    background-color: #9b4300;
+    text-shadow: #fff 0 0 10px;
+    transform: scale(1.1);
+    box-shadow: #fff 0 0 20px 10px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    bottom: 1%;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+/* Esconder elementos quando necessário */
+.hidden {
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #welcomeWindow h1 {
+        font-size: 3rem;
+        width: 90%;
+    }
+
+    #loginWindow {
+        width: 90%;
+        max-width: 400px;
+        padding: 1.5rem;
+    }
+
+    #loginWindow h2 {
+        font-size: 1.8rem;
+    }
+
+    #loginWindow label {
+        font-size: 1.3rem;
+    }
+
+    #loginWindow input:not(#loginSubmit) {
+        font-size: 1rem;
+        height: 2.8rem;
+    }
+
+    #loginSubmit {
+        width: 70%;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #welcomeWindow h1 {
+        font-size: 2.5rem;
+        width: 100%;
+    }
+
+    #welcomeWindow p {
+        font-size: 1.2rem;
+    }
+
+    #welcomeWindow span {
+        font-size: 1rem;
+    }
+
+    #loginWindow {
+        width: 95%;
+        max-width: 350px;
+        padding: 1rem;
+    }
+
+    #loginWindow h2 {
+        font-size: 1.6rem;
+    }
+
+    #loginWindow label {
+        font-size: 1.2rem;
+    }
+
+    #loginWindow input:not(#loginSubmit) {
+        font-size: 1rem;
+        height: 2.5rem;
+    }
+
+    #forgotPassword {
+        font-size: 0.9rem;
+    }
+
+    #loginSubmit {
+        width: 80%;
+        font-size: 1rem;
+    }
+}
