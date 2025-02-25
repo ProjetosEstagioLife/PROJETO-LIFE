@@ -196,6 +196,16 @@ main {
     transform: scale(1.1);
     box-shadow: #fff 0 0 20px 10px;
 }
+.btn-custom {
+    background-color: #BB5400 !important;
+    border-color: #BB5400 !important;
+    color: white !important;
+}
+
+.btn-custom:hover {
+    background-color: #993D00 !important;
+    border-color: #993D00 !important;
+}
 
 /* Rodapé */
 footer {

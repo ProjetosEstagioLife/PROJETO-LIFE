@@ -31,17 +31,18 @@ Escolha sua classe:</p>
             <div id="buttonContainer" class="d-flex flex-column flex-md-row justify-content-around gap-3">
                 <form method="POST" action="' . $BASE_URL . 'processar_opcao.php" class="w-100">
                     <input type="hidden" name="opcao" value="1">
-                    <button class="optBtn btn btn-primary w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 1</button>
+                     <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 1</button>
                 </form>
                 <form method="POST" action="' . $BASE_URL . 'processar_opcao.php" class="w-100">
                     <input type="hidden" name="opcao" value="2">
-                    <button class="optBtn btn btn-primary w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 2</button>
+                     <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 2</button>
                 </form>
                 <form method="POST" action="' . $BASE_URL . 'processar_opcao.php" class="w-100">
                     <input type="hidden" name="opcao" value="3">
-                    <button class="optBtn btn btn-primary w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 3</button>
+                     <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 3</button>
+
                 </form>
-                
+    
             </div>
         </section>
     </main>
