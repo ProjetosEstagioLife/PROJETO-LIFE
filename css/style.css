@@ -19,6 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Garante que o conteúdo e o rodapé fiquem distribuídos */
+
 }
 
 /* Tela inicial */
