@@ -49,16 +49,6 @@ ob_start();
     </div>
 </div>
 
-<!-- Baú Misterioso -->
-<div class="container text-center mt-4">
-    <h2 class="fw-bold" style="font-family: 'Comfortaa', sans-serif; font-size: 1.75rem;">O Baú Misterioso</h2>
-    <p style="font-family: 'Comfortaa', sans-serif; font-size: 1.125rem;">Abra para encontrar uma recompensa pela sua bela batalha!</p>
-    <button id="loginSubmit" class="btn btn-warning px-4 py-2" onclick="mostrarRecompensa()" style="font-family: 'Comfortaa', sans-serif; font-size: 1.125rem;">Abrir Baú</button>
-    <div id="recompensa" class="hidden mt-3">
-        <p class="fw-bold text-success" style="font-family: 'Comfortaa', sans-serif; font-size: 1.125rem;">Parabéns! Você encontrou um amuleto do conhecimento infinito!</p>
-    </div>
-</div>
-
 <script>
     function mostrarRecompensa() {
         document.getElementById('recompensa').classList.remove('hidden');
