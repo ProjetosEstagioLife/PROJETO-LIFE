@@ -1,0 +1,66 @@
+@import url(style.css);
+
+* {
+    margin: 0;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: center;
+}
+#logo {
+    width: 6em;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+}
+header h1 {
+    margin-top: 1rem;
+    font-family: Comfortaa;
+    font-size: 5em;
+    font-weight: bold;
+    color: #000;
+}
+
+/* main */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mainContainer {
+    background: #e9e9e9aa;
+    border: 4px solid #000;
+    border-radius: 25px;
+    width: 80vw;
+    padding: 2em;
+}
+#mainContainer p {
+    font-size: 1.6em;
+    text-align: center;
+}
+.opcao {
+    margin: 1em 0;
+    background: #f06c0066;
+    border: 3px solid #f06c0099;
+    border-radius: 25px;
+    padding: 0.3em 0.6em;
+}
+#buttonContainer {
+    display: flex;
+    justify-content: space-around;
+}
+.optBtn {
+    background: #f06c00;
+    border: 4px solid #000;
+    border-radius: 25px;
+    font-size: 1.5em;
+    padding: 0.3rem 3em;
+}
+.optBtn:hover {
+    background: #bb5400;
+    transition: all ease 200ms;
+}
