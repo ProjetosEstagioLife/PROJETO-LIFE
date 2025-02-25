@@ -22,10 +22,10 @@ $content = '
 
             <!-- Opções listadas -->
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Continuar</p>
+                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Preparado para escrever meu nome na história da Life!</p>
             </div>
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Voltar</p>
+                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Essa jornada parece perigosa demais para mim... Prefiro ficar na taverna contando histórias sobre os verdadeiros heróis! </p>
             </div>
            
             <!-- Botões em formulários -->
