@@ -9,7 +9,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.lifeimg{
+    width: 100px;
+}
 /* Configurações padrão */
 body {
     font-family: "Comfortaa", sans-serif;
