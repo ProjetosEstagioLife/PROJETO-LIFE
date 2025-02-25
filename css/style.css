@@ -15,9 +15,12 @@ body {
     font-family: "Comfortaa", sans-serif;
     background: #ec7a23 url("../Midias/background_menu.png") no-repeat center center fixed;
     background-size: cover; /* Garante que a imagem cubra toda a tela */
-    overflow: hidden;
     min-height: 100vh; /* Garante que o body ocupe pelo menos 100% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o conteúdo e o rodapé fiquem distribuídos */
 }
+
 /* Tela inicial */
 #welcomeWindow {
     width: 100vw;
@@ -28,6 +31,7 @@ body {
     align-items: center;
     text-align: center;
     padding: 5%;
+    overflow-y: auto; /* Permite rolar se o conteúdo for muito grande */
 }
 #welcomeWindow img {
     width: 4rem;
@@ -68,6 +72,7 @@ body {
     border-radius: 30px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    overflow-y: auto; /* Permite rolar se o conteúdo for muito grande */
 }
 #loginWindow h2 {
     font-size: 2rem;
@@ -136,10 +141,8 @@ body {
 footer {
     text-align: center;
     font-weight: bold;
-    position: absolute;
-    bottom: 1%;
-    width: 100%;
     padding: 0.5rem;
+    width: 100%;
 }
 
 /* Esconder elementos quando necessário */
