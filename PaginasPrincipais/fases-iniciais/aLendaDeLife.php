@@ -23,22 +23,14 @@ $content = '
             <!-- Opções listadas -->
             <div class="opcao">
                 <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Preparado para escrever meu nome na história da Life!</p>
-            </div>
-            <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Essa jornada parece perigosa demais para mim... Prefiro ficar na taverna contando histórias sobre os verdadeiros heróis! </p>
-            </div>
-           
+            </div>       
             <!-- Botões em formulários -->
             <div id="buttonContainer" class="d-flex flex-column flex-md-row justify-content-around gap-3">
                 <form method="POST" action="' . $BASE_URL . 'forms/processar_inicio.php" class="w-100">
                     <input type="hidden" name="opcao" value="5">
                     <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 1</button>
                 </form>
-                <form method="POST" action="' . $BASE_URL . 'forms/processar_inicio.php" class="w-100">
-                    <input type="hidden" name="opcao" value="6">
-                     <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 2</button>
 
-                </form>
             </div>
         </section>
     </main>
