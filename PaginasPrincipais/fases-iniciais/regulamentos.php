@@ -1,4 +1,5 @@
 <?php
+$BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 
 $title = "Regulamento do Jogo";
 $content = '
@@ -33,8 +34,7 @@ $content = '
                         <h3>5 - Declaração de Ciente</h3>
                         <p>Ao iniciar o jogo, você declara que leu e está ciente dos termos e condições descritos acima, concordando com a participação nas condições estabelecidas.</p>
                     </div>
-                    
-                    <form action="forms/submit.php" method="POST" class="mt-3">
+                     <form method="POST" action="' . $BASE_URL . 'forms/processar_opcao.php" class="w-100">                    
                         <label for="acceptTerms">Li e aceito os termos e condições do jogo:</label>
                         <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
                         <input type="submit" value="Iniciar Jogo" class="btn btn-primary mt-2">
