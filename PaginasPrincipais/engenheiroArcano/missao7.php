@@ -1,6 +1,6 @@
 <?php
 $title = "Trajetória 7 - A Vitória da Conexão Suprema";
-$BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/curso_php/project_v2-main/"; // Defina a BASE_URL
+$BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
     <header class="text-center py-4">
         <img id="logo" src="' . $BASE_URL . 'Midias/Logo black.png" alt="Logo Life" class="lifeimg img-fluid position-absolute top-0 start-0 m-3" style="max-width: 6em;">
@@ -15,7 +15,7 @@ $content = '
                 <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Tentar aumentar o poder da joia além do necessário.</p>
             </div>
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: nstalar a configuração correta e garantir que tudo funcione perfeitamente. </p>
+                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Instalar a configuração correta e garantir que tudo funcione perfeitamente. </p>
             </div>
              <div class="opcao">
                 <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Remover a joia sem seguir o protocolo. </p>

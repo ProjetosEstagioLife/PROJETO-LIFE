@@ -1,5 +1,5 @@
 <?php
-$title = "Trajetória 6 - A Batalha de Multisserviços";
+$title = "Trajetória 2 - A Transparência na Comunicação com os Clientes";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
     <header class="text-center py-4">
@@ -8,17 +8,17 @@ $content = '
 
     <main class="container-fluid py-4">
         <section id="mainContainer" class="bg-light border border-4 border-dark rounded-3 p-4 mx-auto" style="max-width: 100%;">
- <p class="fs-5 fs-sm-4 text-center"> Um colaborador relata que está sendo tratado de forma desrespeitosa dentro da equipe. Como Guardião da Experiência, qual sua atitude? </p>
+ <p class="fs-5 fs-sm-4 text-center"> Durante uma manutenção programada, os serviços ficam temporariamente interrompidos. Como você comunica isso aos clientes de forma transparente?</p>
 
             <!-- Opções listadas -->
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Reduzir preços sem revisar a qualidade do serviço. </p>
+                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Ocultar a interrupção e esperar que os clientes não percebam.</p>
             </div>
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Acreditar que os clientes permanecerão por lealdade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Comunicar apenas após a interrupção, sem fornecer explicações detalhadas. </p>
             </div>
              <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Criar pacotes inovadores, oferecendo um serviço superior com compromisso e qualidade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Avisar aos clientes com antecedência sobre o horário e a duração da interrupção, garantindo que estão sendo informados de forma clara. </p>
             </div>
            
             <!-- Botões em formulários -->

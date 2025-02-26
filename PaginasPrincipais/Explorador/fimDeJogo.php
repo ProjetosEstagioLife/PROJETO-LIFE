@@ -8,15 +8,15 @@ $content = '
 
     <main class="container-fluid py-4">
         <section id="mainContainer" class="bg-light border border-4 border-dark rounded-3 p-4 mx-auto" style="max-width: 100%;">
- <p class="fs-5 fs-sm-4 text-center"> Bravo aventureiro, O caminho da grandeza é repleto de desafios, e nem todos chegam ao fim da jornada. Infelizmente, seu destino tomou um rumo sombrio… Seja por um feitiço desconhecido, um cabo mal conectado ou um Guardião implacável, sua aventura termina aqui.
+ <p class="fs-5 fs-sm-4 text-center"> Você enfrentou uma série de desafios em sua jornada e buscou, com coragem, soluções inovadoras para a Life. No entanto, a escolha que você fez não foi suficiente para seguir adiante, e sua missão chegou ao fim nesta etapa.
  </p>
-  <p class="fs-5 fs-sm-4 text-center"> Mas nem tudo está perdido! Grandes heróis caem para se reerguer ainda mais fortes.
+  <p class="fs-5 fs-sm-4 text-center">Não se desanime, pois até nas quedas há aprendizado. O caminho da inovação é repleto de incertezas, mas também de crescimento. Cada erro é uma oportunidade para refinar a estratégia e aprimorar o compromisso com a excelência.
  </p>
- <p class="fs-5 fs-sm-4 text-center"> O reino da Life continua a crescer, e novas missões surgirão. A taverna sempre terá um lugar para aqueles que desejam descansar… mas as portas da aventura nunca se fecham completamente.
+ <p class="fs-5 fs-sm-4 text-center"> Embora a jornada tenha terminado por aqui, isso não é o fim. A Life sempre estará à espera de novos exploradores que busquem melhorar a vida das pessoas por meio da inovação.
  </p>
- <p class="fs-5 fs-sm-4 text-center"> Quando sentir que está pronto para tentar novamente, pegue sua armadura, ajuste seu equipamento e venha reescrever sua lenda!
+ <p class="fs-5 fs-sm-4 text-center"> Quando estiver pronto, levante-se e tente novamente. Uma nova aventura o aguarda.
  </p>
- <p class="fs-5 fs-sm-4 text-center"> Até lá, que os Deuses da Conexão guiem seu caminho!
+ <p class="fs-5 fs-sm-4 text-center"> Lembre-se, as portas da inovação nunca se fecham para quem está disposto a aprender.
  </p>
  <p class="fs-5 fs-sm-4 text-center"> Assinado, O Conselho dos Guardiões da Life
  </p>

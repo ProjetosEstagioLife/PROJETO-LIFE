@@ -1,5 +1,5 @@
 <?php
-$title = "Trajetória 6 - A Batalha de Multisserviços";
+$title = "Trajetória 6: A Missão de Simplificar a Vida das Pessoas";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
     <header class="text-center py-4">
@@ -8,17 +8,17 @@ $content = '
 
     <main class="container-fluid py-4">
         <section id="mainContainer" class="bg-light border border-4 border-dark rounded-3 p-4 mx-auto" style="max-width: 100%;">
- <p class="fs-5 fs-sm-4 text-center"> Um colaborador relata que está sendo tratado de forma desrespeitosa dentro da equipe. Como Guardião da Experiência, qual sua atitude? </p>
+ <p class="fs-5 fs-sm-4 text-center">Uma nova proposta de serviço surge, que pode simplificar a vida dos clientes da Life, mas é necessário mudar processos internos para integrá-la. O que você faz? </p>
 
             <!-- Opções listadas -->
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Reduzir preços sem revisar a qualidade do serviço. </p>
+                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Adotar a nova proposta sem revisar os processos internos, esperando que a adaptação seja rápida.</p>
             </div>
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Acreditar que os clientes permanecerão por lealdade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Implementar a mudança de forma planejada e coordenada, com foco na melhoria contínua dos processos internos e simplificação para os clientes. </p>
             </div>
              <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Criar pacotes inovadores, oferecendo um serviço superior com compromisso e qualidade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Optar por não adotar a proposta, achando que os processos atuais são suficientes.</p>
             </div>
            
             <!-- Botões em formulários -->

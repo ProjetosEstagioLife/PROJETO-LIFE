@@ -1,6 +1,6 @@
 <?php
   // Definindo a Base URL correta
-  $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/curso_php/project_v2-main/";
+  $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/";
 ?>
 <!DOCTYPE html>
 <html lang="en">

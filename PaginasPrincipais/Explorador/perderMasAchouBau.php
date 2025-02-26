@@ -8,22 +8,22 @@ $content = '
 
     <main class="container-fluid py-4">
         <section id="mainContainer" class="bg-light border border-4 border-dark rounded-3 p-4 mx-auto" style="max-width: 100%;">
- <p class="fs-5 fs-sm-4 text-center"> Bravo aventureiro, O caminho da grandeza é repleto de desafios, e nem todos chegam ao fim da jornada. Infelizmente, seu destino tomou um rumo sombrio… Seja por um feitiço desconhecido, um cabo mal conectado ou um Guardião implacável, sua aventura termina aqui.
+ <p class="fs-5 fs-sm-4 text-center"> Carta ao Explorador Derrotado,
  </p>
-  <p class="fs-5 fs-sm-4 text-center"> Mas nem tudo está perdido! Grandes heróis caem para se reerguer ainda mais fortes.
+  <p class="fs-5 fs-sm-4 text-center"> Sua jornada foi repleta de coragem, criatividade e determinação. Embora o destino não tenha lhe concedido a vitória nesta etapa, você foi recompensado com uma última oportunidade de reverter sua sorte: à sua frente, encontra-se um baú misterioso.
  </p>
- <p class="fs-5 fs-sm-4 text-center"> O reino da Life continua a crescer, e novas missões surgirão. A taverna sempre terá um lugar para aqueles que desejam descansar… mas as portas da aventura nunca se fecham completamente.
+ <p class="fs-5 fs-sm-4 text-center"> Este baú pode conter um prêmio valioso que o ajudará a seguir adiante em sua missão, ou pode estar vazio, refletindo os desafios ainda por superar. A escolha agora é sua: abrir o baú e descobrir o que o destino preparou para você.
  </p>
- <p class="fs-5 fs-sm-4 text-center"> Quando sentir que está pronto para tentar novamente, pegue sua armadura, ajuste seu equipamento e venha reescrever sua lenda!
+ <p class="fs-5 fs-sm-4 text-center">Independentemente do que encontrar, a missão da Life continua. A inovação nunca para, e sempre há uma nova chance para quem está disposto a tentar novamente. A verdadeira vitória está em persistir, aprender com cada experiência e continuar avançando.
  </p>
- <p class="fs-5 fs-sm-4 text-center"> Até lá, que os Deuses da Conexão guiem seu caminho!
+ <p class="fs-5 fs-sm-4 text-center"> O baú está em suas mãos. O que você vai fazer agora?
  </p>
  <p class="fs-5 fs-sm-4 text-center"> Assinado, O Conselho dos Guardiões da Life
  </p>
 
             <!-- Opções listadas -->
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Voltar ao início.</p>
+                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Abrir Baú.</p>
             </div>
            
             <!-- Botões em formulários -->

@@ -1,5 +1,5 @@
 <?php
-$title = "Trajetória 6 - A Batalha de Multisserviços";
+$title = "Trajetória 1 - O Desafio da Solução Inovadora";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
     <header class="text-center py-4">
@@ -8,17 +8,17 @@ $content = '
 
     <main class="container-fluid py-4">
         <section id="mainContainer" class="bg-light border border-4 border-dark rounded-3 p-4 mx-auto" style="max-width: 100%;">
- <p class="fs-5 fs-sm-4 text-center"> Um colaborador relata que está sendo tratado de forma desrespeitosa dentro da equipe. Como Guardião da Experiência, qual sua atitude? </p>
+ <p class="fs-5 fs-sm-4 text-center"> Você está diante de um obstáculo tecnológico que afeta diretamente os serviços de internet e telefonia. Uma nova solução precisa ser criada para resolver esse problema de maneira inovadora. Como você age? </p>
 
             <!-- Opções listadas -->
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Reduzir preços sem revisar a qualidade do serviço. </p>
+                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Apostar em uma solução já conhecida, sem explorar novas possibilidades.</p>
             </div>
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Acreditar que os clientes permanecerão por lealdade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Investigar as tecnologias emergentes e implementar uma solução inovadora que melhore a qualidade e a confiabilidade dos serviços. </p>
             </div>
              <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Criar pacotes inovadores, oferecendo um serviço superior com compromisso e qualidade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Adiar a solução e esperar que o problema se resolva por conta própria.</p>
             </div>
            
             <!-- Botões em formulários -->

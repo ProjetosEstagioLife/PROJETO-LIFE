@@ -1,5 +1,5 @@
 <?php
-$title = "Trajetória 6 - A Batalha de Multisserviços";
+$title = "Trajetória 3 - A Escolha da Inovação Contínua";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
     <header class="text-center py-4">
@@ -8,17 +8,17 @@ $content = '
 
     <main class="container-fluid py-4">
         <section id="mainContainer" class="bg-light border border-4 border-dark rounded-3 p-4 mx-auto" style="max-width: 100%;">
- <p class="fs-5 fs-sm-4 text-center"> Um colaborador relata que está sendo tratado de forma desrespeitosa dentro da equipe. Como Guardião da Experiência, qual sua atitude? </p>
+ <p class="fs-5 fs-sm-4 text-center"> Você tem uma nova oportunidade para integrar uma tecnologia revolucionária ao portfólio de serviços da Life. Mas a implementação exigirá um esforço significativo. Como você procede? </p>
 
             <!-- Opções listadas -->
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Reduzir preços sem revisar a qualidade do serviço. </p>
+                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Postergar a adoção da nova tecnologia para reduzir os custos imediatos. </p>
             </div>
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Acreditar que os clientes permanecerão por lealdade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Investir na nova tecnologia, com um plano estratégico que garanta inovação contínua e benefício para os clientes. </p>
             </div>
              <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Criar pacotes inovadores, oferecendo um serviço superior com compromisso e qualidade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Decidir por manter os serviços existentes, evitando mudanças que possam ser arriscadas. </p>
             </div>
            
             <!-- Botões em formulários -->

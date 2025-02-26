@@ -1,5 +1,5 @@
 <?php
-$title = "Trajetória 6 - A Batalha de Multisserviços";
+$title = "Trajetória 7 - O Compromisso com a Visão da Life";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
     <header class="text-center py-4">
@@ -8,17 +8,17 @@ $content = '
 
     <main class="container-fluid py-4">
         <section id="mainContainer" class="bg-light border border-4 border-dark rounded-3 p-4 mx-auto" style="max-width: 100%;">
- <p class="fs-5 fs-sm-4 text-center"> Um colaborador relata que está sendo tratado de forma desrespeitosa dentro da equipe. Como Guardião da Experiência, qual sua atitude? </p>
+ <p class="fs-5 fs-sm-4 text-center"> Você tem a chance de estabelecer uma parceria estratégica com uma nova tecnologia que pode ajudar a Life a se tornar a maior e melhor operadora regional. Como você aproveita essa oportunidade?</p>
 
             <!-- Opções listadas -->
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Reduzir preços sem revisar a qualidade do serviço. </p>
+                <p class="mb-0 fs-6 fs-sm-5">1ª Opção: Estabelecer a parceria, integrando a nova tecnologia aos serviços de forma eficiente e alinhada com a visão da Life de inovação e excelência.</p>
             </div>
             <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Acreditar que os clientes permanecerão por lealdade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Rejeitar a parceria, acreditando que a Life pode alcançar seus objetivos sozinha, sem a ajuda de novas tecnologias. </p>
             </div>
              <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Criar pacotes inovadores, oferecendo um serviço superior com compromisso e qualidade.</p>
+                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Adiar a parceria para estudar mais a fundo, sem comprometer a inovação. </p>
             </div>
            
             <!-- Botões em formulários -->
