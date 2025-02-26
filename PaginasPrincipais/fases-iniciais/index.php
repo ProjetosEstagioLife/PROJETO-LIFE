@@ -2,6 +2,12 @@
 
 $title = "Tela de Login";
 $content = '
+    <div id="welcomeWindow">
+            <div id="logoContainer"><img src="Midias/Logo black.png" alt="Logo da empresa"><p>apresenta:</p></div>
+            <h1>O Alvorecer de Novas Conexões</h1>
+            <span>Clique em qualquer lugar para iniciar</span>
+    </div>
+    
     <div id="loginWindow" class="hidden">
         <h2>Entrar</h2>
         <div id="underline"></div>
@@ -15,13 +21,6 @@ $content = '
         </form>
     </div>
 ';
-include_once('../../templates/layout.php');
 
+include_once(('../../templates/layout.php'));
 ?>
-
-<script>
-    // Mostra a tela de login, removendo a classe 'hidden'
-    window.onload = function() {
-        document.getElementById('loginWindow').classList.remove('hidden');
-    }
-</script>
