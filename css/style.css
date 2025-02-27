@@ -94,12 +94,20 @@ main {
     padding: 5%;
     overflow-y: auto; /* Permite rolar se o conteúdo for muito grande */
 }
+#logoContainer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+}
 #welcomeWindow img {
     width: 4rem;
     max-width: 100px;
 }
 #welcomeWindow p {
     font-size: 1.5rem;
+    margin: 0;
 }
 #welcomeWindow h1 {
     font-size: 4rem;
@@ -251,12 +259,22 @@ header {
 }
 
 /* Responsividade */
+@media(max-width: 899px) {
+    #welcomeWindow img {
+        width: 3.5rem;
+    }
+    #logoContainer{
+        gap: 2%;
+    }
+}
 @media (max-width: 768px) {
     #welcomeWindow h1 {
         font-size: 3rem;
         width: 90%;
     }
-
+    #welcomeWindow img {
+        width: 3rem;
+    }
     #loginWindow {
         width: 90%;
         max-width: 400px;
@@ -312,7 +330,12 @@ header {
         font-size: 2.5rem;
         width: 100%;
     }
-
+    #logoContainer{
+        gap: 3%;
+    }
+    #welcomeWindow img {
+        width: 2.5rem;
+    }
     #welcomeWindow p {
         font-size: 1.2rem;
     }

@@ -10,7 +10,7 @@ if (isset($_SESSION['error_message'])) {
 $title = "Tela de Login";
 $content = '
     <div id="welcomeWindow">
-        <div id="logoContainer"><img src="Midias/Logo black.png" alt="Logo da empresa"><p>apresenta:</p></div>
+        <div id="logoContainer"><img src="../../Midias/Logo black.png" alt="Logo Life"><p>apresenta:</p></div>
         <h1>O Alvorecer de Novas Conexões</h1>
         <span>Clique em qualquer lugar para iniciar</span>
     </div>
