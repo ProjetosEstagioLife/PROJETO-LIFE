@@ -24,5 +24,5 @@ $content = '
     </div>
 ';
 
-include_once(('../../templates/layout.php'));
+include_once(('../../templates/layoutLogin.php'));
 ?>

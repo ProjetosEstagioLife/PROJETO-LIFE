@@ -1,13 +1,6 @@
 <?php
   // Definindo a Base URL correta
   $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/";
-  $userId = $_SESSION['user_id'];
-  if(!$userId)
-  {
-     header("Location: " . $BASE_URL . "PaginasPrincipais/fases-iniciais/index.php");
-     exit();
- 
-  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
