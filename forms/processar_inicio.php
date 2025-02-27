@@ -86,29 +86,29 @@ if ($opcao) {
                 try {
                     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+                
                     if (isset($_SESSION['user_id'])) {
-                        $guardiao = isset($_POST['guardiao']) ? $_POST['guardiao'] : 0;
-                        $engenheiro = isset($_POST['engenheiro']) ? $_POST['engenheiro'] : 0;
-    
+                        var_dump($_POST); // Verifique se os valores estão chegando
+                        $guardiao = isset($_POST['guardiao']) ? (int)$_POST['guardiao'] : 0;
+                        $engenheiro = isset($_POST['engenheiro']) ? (int)$_POST['engenheiro'] : 0;
+                
                         if ($guardiao === 1 || $engenheiro === 1) {
                             header("Location: " . $BASE_URL . "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php");
                             exit();
                         }
-    
-                        $explorador = 1; // Define como 1 quando clicado
+                
+                        $explorador = 1;
                         $userId = $_SESSION['user_id'];
                         $stmt = $conn->prepare("UPDATE usuario SET explorador = :explorador WHERE id = :id");
                         $stmt->execute(['explorador' => $explorador, 'id' => $userId]);
+                
                         header("Location: " . $BASE_URL . "PaginasPrincipais/Explorador/missao1.php");
                         exit();
                     }
                 } catch (PDOException $e) {
                     die("Erro ao conectar ao banco de dados: " . $e->getMessage());
                 }
-                break;
-            default:
-                // Redireciona para uma página de erro se nenhuma opção for selecionada
+                
                 header("Location: " . $BASE_URL . "pagina_erro.php");
                 exit();
         }
