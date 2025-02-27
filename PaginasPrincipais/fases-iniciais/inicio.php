@@ -20,9 +20,7 @@ $content = '
             <div class="opcao">
                 <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Com Certeza!</p>
             </div>
-            <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">4ª Opção: Vou partir nessa aventura!</p>
-            </div>
+        
 
             <!-- Botões em formulários -->
             <div id="buttonContainer" class="d-flex flex-column flex-md-row justify-content-around gap-3">
@@ -38,10 +36,7 @@ $content = '
                     <input type="hidden" name="opcao" value="3">
                     <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 3</button>
                 </form>
-                <form method="POST" action="' . $BASE_URL . 'forms/processar_inicio.php" class="w-100">
-                    <input type="hidden" name="opcao" value="4">
-                    <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 4</button>
-                </form>
+                
             </div>
         </section>
     </main>

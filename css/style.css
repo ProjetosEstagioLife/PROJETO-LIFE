@@ -23,6 +23,7 @@ body {
     justify-content: space-between; /* Garante que o conteúdo e o rodapé fiquem distribuídos */
 
 }
+
 header {
     display: flex;
     justify-content: center;
@@ -220,6 +221,35 @@ footer {
     display: none;
 }
 
+
+/* Estilos do botão personalizado */
+.btn-custom {
+    background-color: #F5C096; /* Cor de fundo */
+    border: none; /* Remove a borda */
+    color: #000; /* Cor do texto */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.btn-custom:hover {
+    background-color: #e0b78d; /* Cor ao passar o mouse */
+}
+
+/* Ajustes gerais para o cabeçalho */
+header {
+    margin-bottom: 20px; /* Espaçamento inferior para evitar quebras */
+}
+
+/* Ajustes de responsividade */
+.container {
+    max-width: 1200px; /* Limita a largura máxima do contêiner */
+}
+
+/* Estilos para a seção principal */
+#mainContainer {
+    max-width: 100%; /* Garante que não quebre o layout */
+    overflow: hidden; /* Evita que elementos excedam o contêiner */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     #welcomeWindow h1 {
@@ -249,6 +279,31 @@ footer {
     #loginSubmit {
         width: 70%;
         font-size: 1.1rem;
+    }
+    .optBtn {
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .opcao {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    #logo {
+        max-width: 4em;
+        position: static;
+        margin: 10px auto;
+        display: block;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    #mainContainer {
+        width: 95%;
+        padding: 1em;
     }
 }
 
@@ -297,13 +352,19 @@ footer {
         font-size: 2.5rem; /* Diminui o tamanho da fonte ainda mais em telas pequenas */
     }
 
+
     .optBtn {
-        font-size: 1.2em; /* Ajusta o tamanho da fonte no botão */
-        padding: 0.3rem 2em; /* Ajusta o tamanho do botão */
+        font-size: 1rem;
+        padding: 0.3rem 1rem;
     }
 
     .opcao {
-        font-size: 1.2em; /* Ajusta o tamanho da fonte */
-        padding: 0.7em; /* Ajusta o padding */
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    #mainContainer p {
+        font-size: 1.2rem;
     }
 }
+

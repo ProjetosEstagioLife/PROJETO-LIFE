@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   // Definindo a Base URL correta
   $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/";
   $userId = $_SESSION['user_id'];
@@ -28,17 +30,31 @@ window.onpopstate = function(event) {
 
 </head>
 <body>
-    <header>
-        <!-- Cabeçalho -->
-    </header>
+<header>
+    <!-- Cabeçalho -->
+    <div class="container">
+        <div class="row">
+            <div class="col text-end">
+                <?php if ($userId): ?>
+                    <a href="<?= $BASE_URL ?>forms/logout.php" class="btn btn-custom mt-3">Deslogar</a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</header>
 
-    <main>
+<main>
+    <div class="container">
         <?php echo $content; ?>
-    </main>
+    </div>
+</main>
 
-    <footer>
+<footer>
+    <div class="container text-center">
         <p>Copyright 2025 - Life. Todos os direitos reservados.</p>
-    </footer>
+    </div>
+</footer>
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
