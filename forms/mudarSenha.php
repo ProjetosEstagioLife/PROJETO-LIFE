@@ -1,19 +1,8 @@
 <?php
 session_start(); // Inicia a sessão
 
-// Configurações do banco de dados
-$host = 'localhost'; // Endereço do servidor MySQL
-$dbname = 'life'; // Nome do banco de dados
-$username = 'root'; // Nome de usuário do banco de dados
-$password = '240905'; // Senha do banco de dados
+include_once('../config/db.php'); // Certifique-se de que o caminho está correto para o arquivo db.php
 
-// Conecta ao banco de dados
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erro ao conectar ao banco de dados: " . $e->getMessage());
-}
 
 // Recebe os dados do formulário
 $email = $_POST['email'];

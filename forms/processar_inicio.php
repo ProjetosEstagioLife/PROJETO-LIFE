@@ -1,10 +1,8 @@
 <?php
 session_start();
+include('../config/db.php');
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
-$host = "localhost";
-$dbname = "life";
-$username = "root";
-$password = "240905";
+
 
 // Obtém a opção selecionada
 $opcao = isset($_POST['opcao']) ? $_POST['opcao'] : null;
@@ -34,9 +32,6 @@ if ($opcao) {
             exit(); // Adicionado exit após redirecionamento
             case 6:
                 try {
-                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
                     if (isset($_SESSION['user_id'])) {
                         $explorador = isset($_POST['explorador']) ? $_POST['explorador'] : 0;
                         $guardiao = isset($_POST['guardiao']) ? $_POST['guardiao'] : 0;
@@ -59,9 +54,6 @@ if ($opcao) {
                 break;
             case 7:
                 try {
-                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
                     if (isset($_SESSION['user_id'])) {
                         $explorador = isset($_POST['explorador']) ? $_POST['explorador'] : 0;
                         $engenheiro = isset($_POST['engenheiro']) ? $_POST['engenheiro'] : 0;
@@ -83,10 +75,7 @@ if ($opcao) {
                 }
                 break;
             case 8:
-                try {
-                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                
+                try {        
                     if (isset($_SESSION['user_id'])) {
                         var_dump($_POST); // Verifique se os valores estão chegando
                         $guardiao = isset($_POST['guardiao']) ? (int)$_POST['guardiao'] : 0;

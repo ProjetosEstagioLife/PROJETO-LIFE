@@ -1,19 +1,8 @@
 <?php
 session_start(); // Inicia a sessão
 
-// Configurações do banco de dados
-$host = 'localhost'; // Endereço do servidor MySQL
-$dbname = 'life'; // Nome do banco de dados
-$username = 'root'; // Nome de usuário do banco de dados
-$password = '240905'; // Senha do banco de dados
-
-// Conecta ao banco de dados
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erro ao conectar ao banco de dados: " . $e->getMessage());
-}
+// Inclui o arquivo de configuração com as variáveis de banco de dados
+include_once('../config/db.php'); // Certifique-se de que o caminho está correto para o arquivo db.php
 
 // Recebe os dados do formulário
 $email = $_POST['email'];
@@ -34,7 +23,6 @@ if ($user && $senha === $user['senha']) { // Verifica se a senha é igual à arm
     // Credenciais incorretas
     $_SESSION['error_message'] = "Usuário ou senha incorretos. Tente novamente.";
     header("Location: ../PaginasPrincipais/fases-iniciais/index.php");
-
-
+    exit(); // Garante que o código não continue após o redirecionamento
 }
 ?>
