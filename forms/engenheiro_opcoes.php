@@ -101,6 +101,10 @@ if (isset($opcao) && $opcao !== "") {
         case 22:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
             break;
+            case 25:
+                $novaFase=0;
+                $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+                break;
         default:
             echo "Opção inválida!";
             exit();
