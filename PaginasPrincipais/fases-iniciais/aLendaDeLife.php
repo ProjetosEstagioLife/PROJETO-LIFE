@@ -35,6 +35,6 @@ $content = '
         </section>
     </main>
 ';
-
 include_once('../../templates/layout.php');
+
 ?>

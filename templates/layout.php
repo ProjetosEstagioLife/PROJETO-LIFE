@@ -61,6 +61,12 @@ window.onpopstate = function(event) {
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <script src="<?= $BASE_URL ?>js/script.js"></script>
+<script>
+    window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.go(1); // Impede o usuário de voltar para a página anterior
+};
 
+</script>
 </body>
 </html>

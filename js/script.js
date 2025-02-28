@@ -9,3 +9,12 @@ welcomeWindow.addEventListener('click', () => {
     // Mostra a tela de login
     loginWindow.classList.remove('hidden');
 });
+
+// Impede a navegação para a página anterior
+window.history.pushState(null, "", window.location.href);
+
+window.history.forward(); // Avança para a próxima página, se possível
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+    window.history.forward(); // Impede que o usuário use o "voltar"
+};
