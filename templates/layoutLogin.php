@@ -1,5 +1,5 @@
 <?php
-  // Definindo a Base URL correta
+  
   session_start();
   $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/";
 ?>

@@ -1,4 +1,6 @@
 <?php
+$missaoAtual = 0;
+
 $title = "História Inicial";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
@@ -35,6 +37,6 @@ $content = '
         </section>
     </main>
 ';
-include_once('../../templates/layout.php');
+include_once('../../templates/layoutNormal.php');
 
 ?>

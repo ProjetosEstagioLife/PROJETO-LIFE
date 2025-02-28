@@ -1,4 +1,6 @@
 <?php
+$missaoAtual = 0;
+
 $title = "A Carta do Destino";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
@@ -29,7 +31,7 @@ $content = '
             <!-- Botões em formulários -->
             <div id="buttonContainer" class="d-flex flex-column flex-md-row justify-content-around gap-3">
                 <form method="POST" action="' . $BASE_URL . 'forms/engenheiro_opcoes.php" class="w-100">
-                    <input type="hidden" name="opcao" value="1">
+                    <input type="hidden" name="opcao" value="23">
                     <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 1</button>
                 </form>
             </div>
@@ -37,5 +39,5 @@ $content = '
     </main>
 ';
 
-include_once('../../templates/layout.php');
+include_once('../../templates/layoutNormal.php');
 ?>

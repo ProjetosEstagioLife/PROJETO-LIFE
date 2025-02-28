@@ -1,4 +1,5 @@
 <?php
+$missaoAtual = 6;
 $title = "Trajetória 6 - A Batalha de Multisserviços";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '

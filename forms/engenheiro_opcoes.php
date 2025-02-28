@@ -23,6 +23,7 @@ if (isset($opcao) && $opcao !== "") {
             break;
         case 2:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
             break;
         case 3:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/aLendaDeLife.php";
@@ -32,6 +33,7 @@ if (isset($opcao) && $opcao !== "") {
             break;
         case 5:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
             break;
         case 6:
             $avancaFase = true;
@@ -48,6 +50,7 @@ if (isset($opcao) && $opcao !== "") {
             break;
         case 9:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
             break;
         case 10:
             $avancaFase = true;
@@ -59,6 +62,7 @@ if (isset($opcao) && $opcao !== "") {
             break;
         case 12:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
             break;
         case 13:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
@@ -70,6 +74,7 @@ if (isset($opcao) && $opcao !== "") {
             break;
         case 15:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
             break;
         case 16:
             $avancaFase = true;
@@ -78,6 +83,7 @@ if (isset($opcao) && $opcao !== "") {
             break;
         case 17:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
             break;
         case 18:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
@@ -90,6 +96,7 @@ if (isset($opcao) && $opcao !== "") {
             break;
         case 21:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
             break;
         case 22:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
@@ -99,19 +106,23 @@ if (isset($opcao) && $opcao !== "") {
             exit();
     }
 
-    // Atualiza a fase atual no banco de dados se o jogador avançou para uma nova missão
-    if ($avancaFase) {
-        $sql = "UPDATE usuario SET faseatual = :faseatual WHERE id = :id";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':faseatual', $novaFase, PDO::PARAM_INT);
-        $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-    }
-
-    // Redireciona o jogador para a URL correta
-    header("Location: " . $BASE_URL . $redirectUrl);
-    exit();
+       // Atualiza a fase atual no banco de dados se necessário
+ if ($avancaFase || $novaFase === 0) {
+    $sql = "UPDATE usuario SET faseatual = :faseatual WHERE id = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(':faseatual', $novaFase, PDO::PARAM_INT);
+    $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+    $stmt->execute();
 }
+
+// Redireciona o jogador para a URL correta
+header("Location: " . $BASE_URL . $redirectUrl);
+exit();
+
+}
+
+ 
+
 ?>
 
 <script>

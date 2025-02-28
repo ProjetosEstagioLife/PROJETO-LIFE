@@ -1,4 +1,5 @@
 <?php
+$missaoAtual = 1;
 $title = "Trajetória 1 - O Chamado das Redes Perdidas";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '

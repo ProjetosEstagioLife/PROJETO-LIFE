@@ -1,4 +1,6 @@
 <?php
+$missaoAtual = 0;
+
 include_once('../../config/db.php'); // Certifique-se de que o caminho está correto para o arquivo db.php
 
 // Verifica se há uma mensagem de erro

@@ -11,44 +11,7 @@ if (!$userId) {
     exit();
 }
 
-// Inclui o arquivo de configuração do banco de dados
-include_once(__DIR__ . '/../config/db.php');
 
-// Verifica a fase atual do jogador
-$sql = "SELECT faseatual, engenheiro, guardiao, explorador FROM usuario WHERE id = :id";
-$stmt = $conn->prepare($sql);
-$stmt->bindValue(':id', $userId, PDO::PARAM_INT);
-$stmt->execute();
-$userData = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$faseAtual = $userData['faseatual'];
-$engenheiro = $userData['engenheiro'];
-$guardiao = $userData['guardiao'];
-$explorador = $userData['explorador'];
-
-// Verifica se o jogador já avançou além desta fase
-if ($faseAtual > $missaoAtual) { // $missaoAtual deve ser definido na página que inclui o template
-    if ($engenheiro == 1) {
-        header("Location: " . $BASE_URL . "PaginasPrincipais/engenheiroArcano/missao" . $faseAtual . ".php");
-    } elseif ($guardiao == 1) {
-        header("Location: " . $BASE_URL . "PaginasPrincipais/Guardiao/missao" . $faseAtual . ".php");
-    } elseif ($explorador == 1) {
-        header("Location: " . $BASE_URL . "PaginasPrincipais/Explorador/missao" . $faseAtual . ".php");
-    }
-    exit();
-}
-
-// Verifica se o jogador está tentando acessar uma fase anterior
-if ($faseAtual < $missaoAtual) {
-    if ($engenheiro == 1) {
-        header("Location: " . $BASE_URL . "PaginasPrincipais/engenheiroArcano/missao" . $faseAtual . ".php");
-    } elseif ($guardiao == 1) {
-        header("Location: " . $BASE_URL . "PaginasPrincipais/Guardiao/missao" . $faseAtual . ".php");
-    } elseif ($explorador == 1) {
-        header("Location: " . $BASE_URL . "PaginasPrincipais/Explorador/missao" . $faseAtual . ".php");
-    }
-    exit();
-}
 ?>
 
 <!DOCTYPE html>

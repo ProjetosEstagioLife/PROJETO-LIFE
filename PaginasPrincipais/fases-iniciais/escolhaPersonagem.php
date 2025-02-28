@@ -1,5 +1,7 @@
 
 <?php
+$missaoAtual = 0;
+
 $title = "Tela de Login";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
@@ -48,5 +50,5 @@ Escolha sua classe:</p>
     </main>
 ';
 
-include_once('../../templates/layout.php');
+include_once('../../templates/layoutNormal.php');
 ?>

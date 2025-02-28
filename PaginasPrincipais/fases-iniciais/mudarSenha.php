@@ -1,4 +1,5 @@
 <?php
+$missaoAtual = 0;
 $title = "Mudar Senha";
 $content = '
     <div id="loginWindow">

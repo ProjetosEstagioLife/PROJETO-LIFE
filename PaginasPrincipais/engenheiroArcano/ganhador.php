@@ -1,4 +1,6 @@
 <?php
+$missaoAtual = 0;
+
 $title = "Vitória do Engenheiro Arcano";
 ob_start();
 ?>
@@ -61,5 +63,5 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-include_once('../../templates/layout.php');
+include_once('../../templates/layoutNormal.php');
 ?>

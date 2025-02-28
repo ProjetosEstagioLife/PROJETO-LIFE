@@ -1,6 +1,6 @@
 <?php
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
-
+$missaoAtual = 0;
 $title = "Regulamento do Jogo";
 $content = '
     <div class="container mt-2">

@@ -1,4 +1,5 @@
 <?php
+$missaoAtual = 0;
 $title = "A Carta do Destino";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
@@ -46,5 +47,5 @@ Ou o baú pode estar vazio, simbolizando que, por agora você esta sem sorte!
     </main>
 ';
 
-include_once('../../templates/layout.php');
+include_once('../../templates/layoutNormal.php');
 ?>
