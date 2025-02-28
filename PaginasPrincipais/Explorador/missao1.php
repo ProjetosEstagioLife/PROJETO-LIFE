@@ -1,4 +1,5 @@
 <?php
+$missaoAtual = 1; // Defina o número da missão atual
 $title = "Trajetória 1 - O Desafio da Solução Inovadora";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '

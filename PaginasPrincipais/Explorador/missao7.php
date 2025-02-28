@@ -1,4 +1,5 @@
 <?php
+$missaoAtual = 7;
 $title = "Trajetória 7 - O Compromisso com a Visão da Life";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '

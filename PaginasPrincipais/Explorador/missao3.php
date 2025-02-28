@@ -1,4 +1,5 @@
 <?php
+$missaoAtual = 3;
 $title = "Trajetória 3 - A Escolha da Inovação Contínua";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '

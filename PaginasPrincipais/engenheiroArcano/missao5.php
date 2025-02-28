@@ -1,4 +1,6 @@
 <?php
+$missaoAtual = 5; // Defina o número da missão atual
+
 $title = "Trajetória 5 - A Floresta das Ondas Perdidas";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '

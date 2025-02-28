@@ -1,4 +1,6 @@
 <?php
+$missaoAtual = 6; // Defina o número da missão atual
+
 $title = "Trajetória 6 - O Castelo do Ping Perfeito";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '

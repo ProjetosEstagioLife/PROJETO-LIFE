@@ -1,4 +1,6 @@
 <?php
+$missaoAtual = 2; // Defina o número da missão atual
+
 $title = "Trajetória 2 - A Encruzilhada da Fibra Antiga";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '

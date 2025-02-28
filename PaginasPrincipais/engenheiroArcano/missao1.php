@@ -1,4 +1,5 @@
 <?php
+$missaoAtual = 1; // Defina o número da missão atual
 
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 

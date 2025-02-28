@@ -1,4 +1,6 @@
 <?php
+$missaoAtual = 3; // Defina o número da missão atual
+
 $title = "Trajetória 3 - O Labirinto de Cabos";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
