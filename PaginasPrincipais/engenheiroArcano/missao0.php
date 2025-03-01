@@ -1,6 +1,6 @@
 <?php
 $missaoAtual = 0;
-$title = "A Carta do Destino";
+$title = "Voltar ao Jogo";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
     <header class="text-center py-4">

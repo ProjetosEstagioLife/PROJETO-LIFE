@@ -127,10 +127,3 @@ if (isset($opcao) && $opcao !== "") {
     exit();
 }
 ?>
-
-<script>
-    history.pushState(null, document.title, location.href);
-    window.addEventListener('popstate', function () {
-        history.pushState(null, document.title, location.href);
-    });
-</script>

@@ -57,17 +57,7 @@ if ($faseAtual < $missaoAtual) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
-    <script>
-        // Adiciona o estado atual ao histórico
-        history.pushState(null, document.title, location.href);
 
-        // Monitora o evento de voltar (popstate)
-        window.onpopstate = function(event) {
-            // Força o navegador a permanecer na página atual
-            history.pushState(null, document.title, location.href);
-            alert("Você não pode voltar para a página anterior."); // Opcional: exibe uma mensagem
-        };
-    </script>
     <!-- CSS -->
     <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" 

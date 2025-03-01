@@ -1,6 +1,6 @@
 <?php
 $missaoAtual = 0;
-$title = "Tela de Login";
+$title = "Inicio";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
     <header class="text-center py-4">
