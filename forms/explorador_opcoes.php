@@ -3,14 +3,57 @@ session_start();
 include('../config/db.php');
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 
+// Define o fuso horário
+date_default_timezone_set('America/Sao_Paulo');
+
+// Obtém o ID do usuário da sessão
+$userId = $_SESSION['user_id'] ?? null;
+if (!$userId) {
+    header("Location: " . $BASE_URL . "PaginasPrincipais/fases-iniciais/index.php");
+    exit();
+}
+
+// Função para resetar as vidas diárias
+function resetVidasDiarias($conn, $userId) {
+    $hoje = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $sql = "SELECT ultimo_reset, vidas_disponiveis FROM usuario WHERE id = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $ultimoReset = new DateTime($userData['ultimo_reset'], new DateTimeZone('America/Sao_Paulo'));
+    $vidasDisponiveis = $userData['vidas_disponiveis'];
+
+    // Se o último reset não for hoje, resetar as vidas
+    if ($hoje->format('Y-m-d') > $ultimoReset->format('Y-m-d')) {
+        $sqlUpdate = "UPDATE usuario SET vidas_disponiveis = 2, ultimo_reset = :hoje WHERE id = :id";
+        $stmtUpdate = $conn->prepare($sqlUpdate);
+        $stmtUpdate->bindValue(':hoje', $hoje->format('Y-m-d'), PDO::PARAM_STR);
+        $stmtUpdate->bindValue(':id', $userId, PDO::PARAM_INT);
+        $stmtUpdate->execute();
+        return 2; // Retorna o valor resetado
+    }
+
+    return $vidasDisponiveis; // Retorna o valor atual
+}
+
+// Verifica e reseta as vidas diárias
+$vidasDisponiveis = resetVidasDiarias($conn, $userId);
+
 // Obtém a opção selecionada
 $opcao = isset($_POST['opcao']) ? $_POST['opcao'] : null;
 
 // Verifica se a opção foi selecionada
 if (isset($opcao) && $opcao !== "") {
-    $userId = $_SESSION['user_id']; // Supondo que você tenha o ID do usuário na sessão
+    // Verifica se o jogador tem vidas suficientes para avançar
+    if ($vidasDisponiveis <= 0) {
+        $_SESSION['erro'] = "Você não tem vidas suficientes para avançar. Tente novamente amanhã!";
+        header("Location: " . $BASE_URL . "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php"); // Redireciona para a página de escolha de personagem
+        exit();
+    }
 
-    // Verifica se a opção selecionada avança para uma nova missão
+    // Lógica para avançar de fase
     $avancaFase = false;
     $novaFase = 0;
     $redirectUrl = "";
@@ -27,10 +70,20 @@ if (isset($opcao) && $opcao !== "") {
         case 3:
             $redirectUrl = "PaginasPrincipais/Explorador/fimDeJogo.php";
             $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
             break;
         case 4:
             $redirectUrl = "PaginasPrincipais/Explorador/fimDeJogo.php";
             $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
             break;
         case 5:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/aLendaDeLife.php";
@@ -51,6 +104,11 @@ if (isset($opcao) && $opcao !== "") {
         case 9:
             $redirectUrl = "PaginasPrincipais/Explorador/fimDeJogo.php";
             $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
             break;
         case 10:
             $avancaFase = true;
@@ -63,10 +121,20 @@ if (isset($opcao) && $opcao !== "") {
         case 12:
             $redirectUrl = "PaginasPrincipais/Explorador/fimDeJogo.php";
             $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
             break;
         case 13:
             $redirectUrl = "PaginasPrincipais/Explorador/fimDeJogo.php";
             $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
             break;
         case 14:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
@@ -87,6 +155,11 @@ if (isset($opcao) && $opcao !== "") {
         case 18:
             $redirectUrl = "PaginasPrincipais/Explorador/fimDeJogo.php";
             $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
             break;
         case 19:
             $redirectUrl = "PaginasPrincipais/Explorador/ganhador.php";
@@ -94,6 +167,11 @@ if (isset($opcao) && $opcao !== "") {
         case 20:
             $redirectUrl = "PaginasPrincipais/Explorador/fimDeJogo.php";
             $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
             break;
         case 21:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
@@ -104,15 +182,16 @@ if (isset($opcao) && $opcao !== "") {
         case 23:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
             break;
-            case 25:
-                $novaFase=0;
-                $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
-                break;
+        case 25:
+            $novaFase = 0;
+            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+            break;
         default:
             echo "Opção inválida!";
             exit();
     }
 
+    // Atualiza a fase atual no banco de dados se necessário
     if ($avancaFase || $novaFase === 0) {
         $sql = "UPDATE usuario SET faseatual = :faseatual WHERE id = :id";
         $stmt = $conn->prepare($sql);
@@ -120,7 +199,7 @@ if (isset($opcao) && $opcao !== "") {
         $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
+
     // Redireciona o jogador para a URL correta
     header("Location: " . $BASE_URL . $redirectUrl);
     exit();
