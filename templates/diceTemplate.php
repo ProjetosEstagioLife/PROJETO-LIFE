@@ -64,29 +64,9 @@ $stmt = $conn->prepare($sql);
     $guardiao = $userData['guardiao'];
     $explorador = $userData['explorador'];
 
-    // Verifica se o jogador já avançou além desta fase
-    if ($faseAtual > $missaoAtual) { // $missaoAtual deve ser definido na página que inclui o template
-        if ($engenheiro == 1) {
-            header("Location: " . $BASE_URL . "PaginasPrincipais/engenheiroArcano/missao" . $faseAtual . ".php");
-        } elseif ($guardiao == 1) {
-            header("Location: " . $BASE_URL . "PaginasPrincipais/Guardiao/missao" . $faseAtual . ".php");
-        } elseif ($explorador == 1) {
-            header("Location: " . $BASE_URL . "PaginasPrincipais/Explorador/missao" . $faseAtual . ".php");
-        }
-        exit();
-    }
+   
 
-    // Verifica se o jogador está tentando acessar uma fase anterior
-    if ($faseAtual < $missaoAtual) {
-        if ($engenheiro == 1) {
-            header("Location: " . $BASE_URL . "PaginasPrincipais/engenheiroArcano/missao" . $faseAtual . ".php");
-        } elseif ($guardiao == 1) {
-            header("Location: " . $BASE_URL . "PaginasPrincipais/Guardiao/missao" . $faseAtual . ".php");
-        } elseif ($explorador == 1) {
-            header("Location: " . $BASE_URL . "PaginasPrincipais/Explorador/missao" . $faseAtual . ".php");
-        }
-        exit();
-    }
+    
 ?>
 
 <!DOCTYPE html>

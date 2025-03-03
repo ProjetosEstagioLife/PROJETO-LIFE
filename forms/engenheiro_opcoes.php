@@ -73,9 +73,11 @@ if (isset($opcao) && $opcao !== "") {
             $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();
             break;
-        case 3:
-            $redirectUrl = "PaginasPrincipais/fases-iniciais/aLendaDeLife.php";
-            break;
+            case 3:
+                $missaoAtual = 2;
+                $_SESSION['missaoAtual'] = $missaoAtual; // Armazena na sessão
+                $redirectUrl = "dice.php?successRedirect=PaginasPrincipais/engenheiroArcano/missao" . $missaoAtual . ".php&failRedirect=PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+                break;
         case 4:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
             break;
