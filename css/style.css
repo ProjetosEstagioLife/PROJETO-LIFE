@@ -266,6 +266,9 @@ header {
     #logoContainer{
         gap: 2%;
     }
+    #logo {
+        width: 5em;
+    }
 }
 @media (max-width: 768px) {
     #welcomeWindow h1 {
@@ -309,10 +312,7 @@ header {
     }
 
     #logo {
-        max-width: 4em;
-        position: static;
-        margin: 10px auto;
-        display: block;
+        width: 4em;
     }
 
     header {
@@ -343,7 +343,9 @@ header {
     #welcomeWindow span {
         font-size: 1rem;
     }
-
+    #logo {
+        width: 3.5em;
+    }
     #loginWindow {
         width: 95%;
         max-width: 350px;
