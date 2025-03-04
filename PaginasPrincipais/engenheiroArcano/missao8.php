@@ -1,5 +1,5 @@
 <?php
-$missaoAtual = 0;
+$missaoAtual = 8;
 
 $title = "A Carta do Destino";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL

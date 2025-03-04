@@ -1,7 +1,12 @@
 <?php
+// Inicia a sessão
 session_start();
+
+// Inclui o arquivo de configuração do banco de dados
 include('../config/db.php');
-$BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
+
+// Define a URL base
+$BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/";
 
 // Define o fuso horário
 date_default_timezone_set('America/Sao_Paulo');
@@ -13,9 +18,14 @@ if (!$userId) {
     exit();
 }
 
-// Função para resetar as vidas diárias
+/**
+ * Função para resetar as vidas diárias do usuário.
+ * Se o último reset não foi hoje, as vidas são resetadas para 2.
+ */
 function resetVidasDiarias($conn, $userId) {
     $hoje = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+
+    // Busca o último reset e as vidas disponíveis do usuário
     $sql = "SELECT ultimo_reset, vidas_disponiveis FROM usuario WHERE id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
@@ -25,7 +35,7 @@ function resetVidasDiarias($conn, $userId) {
     $ultimoReset = new DateTime($userData['ultimo_reset'], new DateTimeZone('America/Sao_Paulo'));
     $vidasDisponiveis = $userData['vidas_disponiveis'];
 
-    // Se o último reset não for hoje, resetar as vidas
+    // Se o último reset não foi hoje, reseta as vidas
     if ($hoje->format('Y-m-d') > $ultimoReset->format('Y-m-d')) {
         $sqlUpdate = "UPDATE usuario SET vidas_disponiveis = 2, ultimo_reset = :hoje WHERE id = :id";
         $stmtUpdate = $conn->prepare($sqlUpdate);
@@ -42,14 +52,14 @@ function resetVidasDiarias($conn, $userId) {
 $vidasDisponiveis = resetVidasDiarias($conn, $userId);
 
 // Obtém a opção selecionada
-$opcao = isset($_POST['opcao']) ? $_POST['opcao'] : null;
+$opcao = $_POST['opcao'] ?? null;
 
 // Verifica se a opção foi selecionada
-if (isset($opcao) && $opcao !== "") {
+if ($opcao !== null && $opcao !== "") {
     // Verifica se o jogador tem vidas suficientes para avançar
     if ($vidasDisponiveis <= 0) {
         $_SESSION['erro'] = "Você não tem vidas suficientes para avançar. Tente novamente amanhã!";
-        header("Location: " . $BASE_URL . "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php"); // Redireciona para a página de escolha de personagem
+        header("Location: " . $BASE_URL . "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php");
         exit();
     }
 
@@ -211,12 +221,33 @@ if (isset($opcao) && $opcao !== "") {
             break;
         case 21:
             $redirectUrl = "PaginasPrincipais/Guardiao/fimDeJogo.php";
-            $novaFase = 0;
-            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
-            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
-            $stmt = $conn->prepare($sql);
-            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
-            $stmt->execute();
+            // Reduzir uma vida ao ser redirecionado para fimDeJogo.php
+            try {
+                $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+                $stmt->execute();
+            } catch (PDOException $e) {
+                error_log("Erro ao reduzir vida: " . $e->getMessage());
+            }
+
+            // 40% de chance de setar o bau como verdadeiro
+            if (rand(1, 100) <= 40) {
+                try {
+                    $avancaFase = true;
+                    $novaFase = 8;
+                    // Atualiza o campo bau para verdadeiro
+                    $sqlBau = "UPDATE usuario SET bau = true WHERE id = :id";
+                    $stmtBau = $conn->prepare($sqlBau);
+                    $stmtBau->bindParam(':id', $userId, PDO::PARAM_INT);
+                    $stmtBau->execute();
+
+                    // Se o bau foi ativado, redireciona para a página de perder mas achou bau
+                    $redirectUrl = "PaginasPrincipais/Guardiao/missao8.php";
+                } catch (PDOException $e) {
+                    error_log("Erro ao ativar bau: " . $e->getMessage());
+                }
+            }
             break;
         case 22:
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
@@ -228,6 +259,11 @@ if (isset($opcao) && $opcao !== "") {
             $novaFase = 0;
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
             break;
+            case 27:
+                $avancaFase = true;
+                $novaFase = 9;
+                $redirectUrl = "PaginasPrincipais/Guardiao/missao9.php";
+                break;
         default:
             echo "Opção inválida!";
             exit();

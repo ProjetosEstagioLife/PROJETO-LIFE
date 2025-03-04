@@ -98,6 +98,7 @@ $stmt = $conn->prepare($sql);
 
     <!-- CSS -->
     <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -113,6 +114,7 @@ $stmt = $conn->prepare($sql);
             </div>
         </div>
     </div>
+    
 </header>
 
 <main>
@@ -154,6 +156,7 @@ $stmt = $conn->prepare($sql);
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?= $BASE_URL ?>js/scripts.js"></script>
+<script src="<?= $BASE_URL ?>js/script.js"></script>
+
 </body>
 </html>

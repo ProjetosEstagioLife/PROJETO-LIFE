@@ -97,7 +97,8 @@ $stmt = $conn->prepare($sql);
     <title><?php echo $title; ?></title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>css/bauStyle.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -140,6 +141,7 @@ $stmt = $conn->prepare($sql);
         <!-- Conteúdo principal da página -->
         <?php echo $content; ?>
     </div>
+    <button>retornar</button>
 </main>
 <?php if ($userId): ?>
     <div class="vidas-disponiveis d-flex justify-content-center align-items-end mt-4">
@@ -154,6 +156,7 @@ $stmt = $conn->prepare($sql);
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?= $BASE_URL ?>js/script.js"></script>
+<script src="<?= $BASE_URL ?>js/bauScript.js"></script>
+
 </body>
 </html>

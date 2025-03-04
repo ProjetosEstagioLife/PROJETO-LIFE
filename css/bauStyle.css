@@ -7,22 +7,21 @@
     padding: 0;
     box-sizing: border-box;
 }
-.lifeimg{
-    width: 100px;
-}
+
 /* Configurações padrão */
 body {
     font-family: "Comfortaa", sans-serif;
     background: #ec7a23 url("../Midias/background_menu.png") no-repeat center center fixed;
-    background-size: cover; /* Garante que a imagem cubra toda a tela */
-    min-height: 100vh; /* Garante que o body ocupe pelo menos 100% da altura da tela */
+    background-size: cover;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Garante que o conteúdo e o rodapé fiquem distribuídos */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
     overflow: hidden;
 }
 
-.hide{
+.hide {
     visibility: hidden;
 }
 
@@ -33,40 +32,64 @@ body {
     left: 0.5em;
 }
 
-#chestWindow{
-    width: 100vw;
-    height: 100vh;
+#chestWindow {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding: 1rem;
 }
-#chestWindow h1{
+
+#returnButton {
+    margin-top: 2rem;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#returnButton:hover {
+    background-color: #d63c00;
+}
+
+#chestWindow h1 {
     font-size: 3rem;
-    margin-bottom: -5rem;
+    margin-bottom: 1rem; /* Ajuste o espaçamento conforme necessário */
     text-align: center;
 }
-#chestWindow p{
+
+#chestWindow p {
     font-size: 1.2rem;
     font-style: italic;
 }
-#chest{
+
+#chest {
     width: 20rem;
     height: 20rem;
     z-index: 999;
 }
-.standardChest{
+
+.standardChest {
     background: url("../Midias/bauImg.png") no-repeat;
     background-size: contain;
 }
-.openChest{
+
+.openChest {
     transform: scale(5);
     background: url("../Midias/bauGif.gif") no-repeat;
     background-size: contain;
     position: fixed;
     top: 10%;
 }
-#transition{
+
+#transition {
     position: fixed;
     top: 0;
     left: 0;
@@ -78,31 +101,83 @@ body {
     visibility: hidden;
 }
 
-#rewardWindow{
-    width: 100vw;
-    height: 100vh;
+#rewardWindow {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-#rewardWindow h1{
+
+#rewardWindow h1 {
     font-size: 2rem;
     margin-bottom: 3rem;
     text-align: center;
 }
-#rewardWindow span{
+
+#rewardWindow span {
     font-size: 5rem;
     text-align: center;
 }
-#rewardWindow p{
+
+#rewardWindow p {
     font-size: 1.2rem;
     margin-top: 2rem;
     font-style: italic;
 }
 
-@media (max-width: 480px){
-    .openChest{
-        transform: scale(3);
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #chestWindow h1 {
+        font-size: 2rem; /* Reduz o tamanho do título */
+    }
+
+    #chest {
+        max-width: 200px; /* Reduz o tamanho do baú */
+    }
+
+    #rewardWindow h1 {
+        font-size: 1.5rem;
+    }
+
+    #rewardWindow span {
+        font-size: 2rem;
+    }
+
+    #rewardWindow p {
+        font-size: 1rem;
+    }
+
+    #returnButton {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #chestWindow h1 {
+        font-size: 1.5rem; /* Título ainda menor */
+    }
+
+    #chest {
+        max-width: 150px; /* Baú ainda menor */
+    }
+
+    #rewardWindow h1 {
+        font-size: 1.2rem;
+    }
+
+    #rewardWindow span {
+        font-size: 1.5rem;
+    }
+
+    #rewardWindow p {
+        font-size: 0.9rem;
+    }
+
+    #returnButton {
+        font-size: 0.9rem;
+        padding: 6px 12px;
     }
 }

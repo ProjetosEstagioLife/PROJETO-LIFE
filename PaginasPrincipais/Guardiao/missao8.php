@@ -1,5 +1,5 @@
 <?php
-$missaoAtual = 0;
+$missaoAtual = 8;
 $title = "A Carta do Destino";
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Defina a BASE_URL
 $content = '
@@ -39,7 +39,7 @@ Ou o baú pode estar vazio, simbolizando que, por agora você esta sem sorte!
             <!-- Botões em formulários -->
             <div id="buttonContainer" class="d-flex flex-column flex-md-row justify-content-around gap-3">
                 <form method="POST" action="' . $BASE_URL . 'forms/guardiao_opcoes.php" class="w-100">
-                    <input type="hidden" name="opcao" value="22">
+                    <input type="hidden" name="opcao" value="27">
                     <button class="btn-custom optBtn  w-100 fs-6 fs-sm-5 py-2" type="submit">Selecionar Opção 1</button>
                 </form>
             </div>
