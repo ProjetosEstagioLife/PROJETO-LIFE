@@ -68,22 +68,34 @@ if (isset($opcao) && $opcao !== "") {
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
             $novaFase = 0;
             // Reduz uma vida ao ser redirecionado para fimDeJogo.php
-            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();
             break;
         case 3:
-            $redirectUrl = "PaginasPrincipais/fases-iniciais/aLendaDeLife.php";
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
             break;
         case 4:
-            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();;
             break;
         case 5:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
             $novaFase = 0;
             // Reduz uma vida ao ser redirecionado para fimDeJogo.php
-            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();
@@ -99,13 +111,20 @@ if (isset($opcao) && $opcao !== "") {
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/missao4.php";
             break;
         case 8:
-            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();;
+            break;
             break;
         case 9:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
             $novaFase = 0;
             // Reduz uma vida ao ser redirecionado para fimDeJogo.php
-            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();
@@ -116,19 +135,31 @@ if (isset($opcao) && $opcao !== "") {
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/missao5.php";
             break;
         case 11:
-            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
-            break;
-        case 12:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
             $novaFase = 0;
             // Reduz uma vida ao ser redirecionado para fimDeJogo.php
             $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();;
+            break;
+        case 12:
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();
             break;
         case 13:
-            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();;
             break;
         case 14:
             $avancaFase = true;
@@ -139,7 +170,7 @@ if (isset($opcao) && $opcao !== "") {
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
             $novaFase = 0;
             // Reduz uma vida ao ser redirecionado para fimDeJogo.php
-            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();
@@ -153,16 +184,28 @@ if (isset($opcao) && $opcao !== "") {
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
             $novaFase = 0;
             // Reduz uma vida ao ser redirecionado para fimDeJogo.php
-            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();
             break;
         case 18:
-            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();;
             break;
         case 19:
-            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
+            $novaFase = 0;
+            // Reduz uma vida ao ser redirecionado para fimDeJogo.php
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();;
             break;
         case 20:
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/ganhador.php";
@@ -171,7 +214,7 @@ if (isset($opcao) && $opcao !== "") {
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/fimDeJogo.php";
             $novaFase = 0;
             // Reduz uma vida ao ser redirecionado para fimDeJogo.php
-            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 2 WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();
