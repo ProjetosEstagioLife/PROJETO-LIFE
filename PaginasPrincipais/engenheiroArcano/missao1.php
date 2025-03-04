@@ -25,7 +25,7 @@ $content = '
                 <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Tocar nos cabos sem proteção. </p>
             </div>
              <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Tentar reparar os cabos com um feitiço de emergência.. </p>
+                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Tentar reparar os cabos com seu conhecimento em feitiçaria. </p>
             </div>
            
             <!-- Botões em formulários -->

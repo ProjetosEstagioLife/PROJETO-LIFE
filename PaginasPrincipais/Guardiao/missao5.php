@@ -19,7 +19,7 @@ $content = '
                 <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Ignorar o relato e deixar que os próprios colaboradores resolvam.</p>
             </div>
              <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Conversar com os envolvidos e tentar resolver sem tomar medidas drásticas.</p>
+                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Conversar com os envolvidos e tentar resolver rapidamente.</p>
             </div>
            
             <!-- Botões em formulários -->

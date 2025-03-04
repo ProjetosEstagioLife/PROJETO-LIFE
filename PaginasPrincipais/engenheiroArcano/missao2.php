@@ -20,7 +20,7 @@ $content = '
                 <p class="mb-0 fs-6 fs-sm-5">2ª Opção: Pisar sem cuidado em um piso quebradiço. </p>
             </div>
              <div class="opcao">
-                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Seguir o mapa e explorar as ruínas com cautela. </p>
+                <p class="mb-0 fs-6 fs-sm-5">3ª Opção: Seguir o mapa e explorar o mais rápido possível. </p>
             </div>
            
             <!-- Botões em formulários -->
