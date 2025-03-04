@@ -1,0 +1,108 @@
+/* Mini reset */
+* {
+    font-size: 100%;
+    font-style: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.lifeimg{
+    width: 100px;
+}
+/* Configurações padrão */
+body {
+    font-family: "Comfortaa", sans-serif;
+    background: #ec7a23 url("../Midias/background_menu.png") no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem cubra toda a tela */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos 100% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o conteúdo e o rodapé fiquem distribuídos */
+    overflow: hidden;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+#logo {
+    width: 6em;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+}
+
+#chestWindow{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+#chestWindow h1{
+    font-size: 3rem;
+    margin-bottom: -5rem;
+    text-align: center;
+}
+#chestWindow p{
+    font-size: 1.2rem;
+    font-style: italic;
+}
+#chest{
+    width: 20rem;
+    height: 20rem;
+    z-index: 999;
+}
+.standardChest{
+    background: url("../Midias/bauImg.png") no-repeat;
+    background-size: contain;
+}
+.openChest{
+    transform: scale(5);
+    background: url("../Midias/bauGif.gif") no-repeat;
+    background-size: contain;
+    position: fixed;
+    top: 10%;
+}
+#transition{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    transition: opacity 2s ease, visibility 2s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#rewardWindow{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+#rewardWindow h1{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+#rewardWindow span{
+    font-size: 5rem;
+    text-align: center;
+}
+#rewardWindow p{
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+@media (max-width: 480px){
+    .openChest{
+        transform: scale(3);
+    }
+}
