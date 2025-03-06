@@ -141,7 +141,6 @@ $stmt = $conn->prepare($sql);
         <!-- Conteúdo principal da página -->
         <?php echo $content; ?>
     </div>
-    <button>retornar</button>
 </main>
 <?php if ($userId): ?>
     <div class="vidas-disponiveis d-flex justify-content-center align-items-end mt-4">

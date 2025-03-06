@@ -241,6 +241,11 @@ if ($opcao !== null && $opcao !== "") {
                     $stmtBau = $conn->prepare($sqlBau);
                     $stmtBau->bindParam(':id', $userId, PDO::PARAM_INT);
                     $stmtBau->execute();
+                    $userId = $_SESSION['user_id'] ?? null;
+                    $sql = "UPDATE usuario SET vidas_disponiveis = 1 WHERE id = :id";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+                    $stmt->execute();
 
                     // Se o bau foi ativado, redireciona para a página de perder mas achou bau
                     $redirectUrl = "PaginasPrincipais/Guardiao/missao8.php";

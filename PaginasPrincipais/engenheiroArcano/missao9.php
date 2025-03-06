@@ -30,7 +30,7 @@ $content = '
                 <p>Vá no RH retirar seu prêmio.</p>
                 <div id="buttonContainer" class="d-flex flex-column align-items-center justify-content-center mt-4">
     <form method="POST" action="' . $BASE_URL . 'forms/engenheiro_opcoes.php" class="w-100 text-center">
-        <input type="hidden" name="opcao" value="22">
+        <input type="hidden" name="opcao" value="32">
         <button id="returnButton" class="btn-custom optBtn fs-6 fs-sm-5 py-2 w-100" style="max-width: 250px;" type="submit">
             Voltar ao Início
         </button>

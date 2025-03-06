@@ -252,6 +252,11 @@ if ($opcao !== null && $opcao !== "") {
                     $stmtBau = $conn->prepare($sqlBau);
                     $stmtBau->bindParam(':id', $userId, PDO::PARAM_INT);
                     $stmtBau->execute();
+                    $userId = $_SESSION['user_id'] ?? null;
+                    $sql = "UPDATE usuario SET vidas_disponiveis = 1 WHERE id = :id";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+                    $stmt->execute();
 
                     // Se o bau foi ativado, redireciona para a página de perder mas achou bau
                     $redirectUrl = "PaginasPrincipais/Explorador/missao8.php";
@@ -283,6 +288,7 @@ if ($opcao !== null && $opcao !== "") {
                 $stmt = $conn->prepare($sql);
                 $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
                 $stmt->execute();
+                
             } catch (PDOException $e) {
                 error_log("Erro ao reduzir vida: " . $e->getMessage());
             }

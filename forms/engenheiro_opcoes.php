@@ -123,6 +123,11 @@ if ($opcao !== null && $opcao !== "") {
                     $stmtBau = $conn->prepare($sqlBau);
                     $stmtBau->bindParam(':id', $userId, PDO::PARAM_INT);
                     $stmtBau->execute();
+                    $userId = $_SESSION['user_id'] ?? null;
+                    $sql = "UPDATE usuario SET vidas_disponiveis = 1 WHERE id = :id";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+                    $stmt->execute();
 
                     // Se o bau foi ativado, redireciona para a página de perder mas achou bau
                     $redirectUrl = "PaginasPrincipais/engenheiroArcano/missao8.php";
@@ -266,6 +271,14 @@ if ($opcao !== null && $opcao !== "") {
             $novaFase = 0;
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
             break;
+            case 32:
+                $novaFase = 0;
+                $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+                $stmt->execute();
+                $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+                break;
         default:
             echo "Opção inválida!";
             exit();
