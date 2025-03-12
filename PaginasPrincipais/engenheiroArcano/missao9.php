@@ -1,12 +1,29 @@
 <?php
 $missaoAtual = 9; // Define a missão atual
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Define a URL base
+include_once('../../config/db.php'); 
 
 // Configura o fuso horário
 date_default_timezone_set('America/Sao_Paulo');
 
 // Define o título da página
 $title = "Baú Misterioso";
+
+$conn = $pdo; 
+
+$stmt = $conn->prepare("SELECT nome, quantidade FROM premios ORDER BY id");
+$stmt->execute();
+
+
+$premiosDisponiveis = array();
+
+while ($linha = $stmt->fetch()) {
+    $nome = $linha["nome"];
+    $qtd = $linha["quantidade"];
+    for ($j = 0; $j < intval($qtd); $j++) {
+        $premiosDisponiveis[] = $nome;
+    }
+}
 
 // Define o conteúdo principal da página
 $content = '
@@ -26,7 +43,7 @@ $content = '
 
             <div id="rewardWindow" class="hide">
                 <h1>Você ganhou um...</h1>
-                <span id="reward">Prêmio!!!</span>
+                <span id="reward">'.'</span>
                 <p>Vá no RH retirar seu prêmio.</p>
                 <div id="buttonContainer" class="d-flex flex-column align-items-center justify-content-center mt-4">
     <form method="POST" action="' . $BASE_URL . 'forms/engenheiro_opcoes.php" class="w-100 text-center">
