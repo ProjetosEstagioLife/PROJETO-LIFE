@@ -47,7 +47,7 @@ body {
     margin-top: 2rem;
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #ff4500;
+    background: #ff4500;
     color: white;
     border: none;
     border-radius: 8px;
@@ -125,6 +125,17 @@ body {
     font-size: 1.2rem;
     margin-top: 2rem;
     font-style: italic;
+}
+
+.trocaBtn {
+    border: none;
+    border-radius: 10px;
+    background: #ff4500;
+    color: #fff;
+}
+.trocaBtn:hover {
+    background: #d63c00;
+    transition: background 0.3s ease;
 }
 
 /* Responsividade para telas menores */

@@ -271,14 +271,17 @@ if ($opcao !== null && $opcao !== "") {
             $novaFase = 0;
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
             break;
-            case 32:
-                $novaFase = 0;
-                $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
-                $stmt = $conn->prepare($sql);
-                $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
-                $stmt->execute();
-                $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
-                break;
+        case 32:
+            $novaFase = 0;
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+            break;
+        case 40:
+            $novaFase = 0;
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/missao10";
         default:
             echo "Opção inválida!";
             exit();

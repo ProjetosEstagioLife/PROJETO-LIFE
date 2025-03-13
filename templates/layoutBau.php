@@ -1,6 +1,6 @@
 <?php
 // Inicia a sessão
-session_start();
+// session_start();
 
 // Define a Base URL correta
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/";
