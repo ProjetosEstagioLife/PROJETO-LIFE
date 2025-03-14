@@ -308,6 +308,36 @@ if ($opcao !== null && $opcao !== "") {
             $novaFase = 9;
             $redirectUrl = "PaginasPrincipais/Explorador/missao9.php";
             break;
+        case 40:
+            $novaFase = 10;
+            $avancaFase = true;
+            $redirectUrl = "PaginasPrincipais/Explorador/missao10.php";
+            break;
+        case 41:
+            $novaFase = 11;
+            $avancaFase = true;
+
+                        
+            $premioUser = $_SESSION['premioUser'];
+            $idPremioNovo = $_SESSION['idPremio'];
+
+                        
+            // Aumenta a quantidade do prêmio que estava com o usuário.
+            $stmt = $conn->prepare("UPDATE premio SET quantidade = quantidade + 1 WHERE id = :id");
+            $stmt->execute([':id' => $premioUser]);
+
+            // Diminui a quantidade do novo prêmio do usuário.
+            $stmt = $conn->prepare("UPDATE premio SET quantidade = quantidade - 1 WHERE id = :id");
+            $stmt->execute([':id' => $idPremioNovo]);
+
+            $userId = $_SESSION['user_id'];
+            // Muda o registro do prêmio atual do usuário.
+            $stmt = $conn->prepare("UPDATE usuario SET idPremio = :idp WHERE id = :idc");
+            $stmt->execute([':idp' => $idPremioNovo, ':idc' => $userId]);
+
+
+            $redirectUrl = "PaginasPrincipais/Explorador/missao11.php";
+            break;
         default:
             echo "Opção inválida!";
             exit();

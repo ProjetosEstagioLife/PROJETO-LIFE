@@ -305,9 +305,11 @@ if ($opcao !== null && $opcao !== "") {
             $stmt = $conn->prepare("UPDATE premio SET quantidade = quantidade - 1 WHERE id = :id");
             $stmt->execute([':id' => $idPremioNovo]);
 
+            $userId = $_SESSION['user_id'];
+
             // Muda o registro do prêmio atual do usuário.
-            $stmt = $conn->prepare("UPDATE usuario SET idPremio = :idp WHERE id = :idc");
-            $stmt->execute([':idp' => $idPremioNovo, ':idc' => $premioUser]);
+            $stmt = $conn->prepare("UPDATE usuario SET idPremio = :idp WHERE id = :idu");
+            $stmt->execute([':idp' => $idPremioNovo, ':idu' => $userId]);
 
 
             $redirectUrl = "PaginasPrincipais/engenheiroArcano/missao11.php";
