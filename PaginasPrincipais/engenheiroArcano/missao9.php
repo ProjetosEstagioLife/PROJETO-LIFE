@@ -28,23 +28,70 @@ while ($linha = $stmt->fetch()) {
 
 $userId = $_SESSION['user_id'];
 
+// Busca id do premio que o usuário já possui, se possuir
 $stmt = $conn->prepare("SELECT idPremio FROM usuario WHERE id = :id");
 $stmt->execute([':id' => $userId]);
 $premioUser = $stmt->fetch()['idPremio'];
 
+$_SESSION['premioUser'] = $premioUser;
+
+// Sorteia premio em array
 $novoPremio = $premiosDisponiveis[rand(1, count($premiosDisponiveis))];
 
-if ($premioUser != NULL) {
+// Busca id do prêmio sorteado
+$stmt = $conn->prepare("SELECT id FROM premio WHERE nome = :nome");
+$stmt->execute([':nome' => $novoPremio]);
+$idPremioNovo = $stmt->fetch()['id'];
+
+$_SESSION['idPremio'] = $idPremioNovo;
+
+if ($idPremioNovo == $premioUser) {
+    $message = '
+    <h2>Outro(a) '.$novoPremio.' :(</h2>
+    <p>Infelizmente não podemos te entregar outro(a).</p>
+    <p>Mas você pode tentar encontrar outros prêmios para trocar por este!</p>
+    <div id="buttonContainer" class="d-flex flex-column align-items-center justify-content-center mt-4">
+        <form method="POST" action="' . $BASE_URL . 'forms/engenheiro_opcoes.php" class="w-100 text-center">
+            <input type="hidden" name="opcao" value="32">
+            <button id="returnButton" class="btn-custom optBtn fs-6 fs-sm-5 py-2 w-100" style="max-width: 250px;" type="submit">
+                Voltar ao Início
+            </button>
+        </form>
+    </div>
+    ';
+} else if ($premioUser != NULL) {
     $message = '
     <span id="reward">'.$novoPremio.'!!</span>
     <p>Mas você já ganhou um(a) '.$premios[$premioUser-1].'.</p>
-    <form action="../../forms/engenheiro_opcoes.php" method="POST">
+    <form action="' . $BASE_URL . 'forms/engenheiro_opcoes.php" method="POST">
         <p>Deseja trocar '.$premios[$premioUser-1].' por '.$novoPremio.'?</p>
         <div class="d-flex justify-content-around">
-            <button name="opcao" value="41" class="trocaBtn btn-custom optBtn  w-25 fs-6 fs-sm-5 py-2">Sim</button>
-            <button name="opcao" value="40" class="trocaBtn btn-custom optBtn  w-25 fs-6 fs-sm-5 py-2">Não</button>
+            <input id="retorno" type="hidden" name="opcao" value="">
+            <button class="trocaBtn btn-custom optBtn  w-25 fs-6 fs-sm-5 py-2" onclick="document.getElementById(' . "'retorno'" . ').value = 41">Sim</button>
+            <button class="trocaBtn btn-custom optBtn  w-25 fs-6 fs-sm-5 py-2" onclick="document.getElementById(' . "'retorno'" . ').value = 40">Não</button>
         </div>
     </form>';
+} else {
+    $message = '
+    <h2>'.$novoPremio.'!!</h2>
+    <p>Vá no RH retirar seu prêmio.</p>
+    <p>Ou tente encontrar outros prêmios para trocar por este!</p>
+
+    <div id="buttonContainer" class="d-flex flex-column align-items-center justify-content-center mt-4">
+        <form method="POST" action="' . $BASE_URL . 'forms/engenheiro_opcoes.php" class="w-100 text-center">
+            <input type="hidden" name="opcao" value="32">
+            <button id="returnButton" class="btn-custom optBtn fs-6 fs-sm-5 py-2 w-100" style="max-width: 250px;" type="submit">
+                Voltar ao Início
+            </button>
+        </form>
+    </div>
+    ';
+
+    $stmt = $conn->prepare("UPDATE usuario SET idPremio = :idp WHERE id = :idc");
+    $stmt->execute([':idp' => $idPremioNovo,'idc' => $userId]);
+
+    $stmt = $conn->prepare("UPDATE premio SET quantidade = quantidade - 1 WHERE id = :id");
+    $stmt->execute([':id' => $idPremioNovo]);
 }
 
 
@@ -60,23 +107,16 @@ $content = '
 
             <h1>Você achou um Baú Misterioso</h1>
 
-            <div id="chestWindow">
+            <div class="chestWindow" id="chestWindow">
                 <div id="chest" class="standardChest"></div>
                 <p>Clique para abrir</p>
             </div>
 
             <div id="rewardWindow" class="hide">
-                <h1>Você ganhou um...</h1>' .
+                <h1>Você ganhou um(a)...</h1>' .
                 $message
-                .'<p>Vá no RH retirar seu prêmio.</p>
-                <div id="buttonContainer" class="d-flex flex-column align-items-center justify-content-center mt-4">
-    <form method="POST" action="' . $BASE_URL . 'forms/engenheiro_opcoes.php" class="w-100 text-center">
-        <input type="hidden" name="opcao" value="32">
-        <button id="returnButton" class="btn-custom optBtn fs-6 fs-sm-5 py-2 w-100" style="max-width: 250px;" type="submit">
-            Voltar ao Início
-        </button>
-    </form>
-</div>
+                .'
+
 
 </div>
             </div>

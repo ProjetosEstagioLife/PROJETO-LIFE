@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$missaoAtual = 10; // Define a missão atual
+$missaoAtual = 11; // Define a missão atual
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/"; // Define a URL base
 include_once('../../config/db.php');
 
@@ -21,7 +21,7 @@ $content = '
     <main class="container-fluid py-4 text-center">
         <section id="mainContainer" class="bg-light border border-4 border-dark rounded-3 p-5 mx-auto" style="max-width: 100%;">
 
-            <h1 class="m-5">Você manteve seu prêmio!</h1>
+            <h1 class="m-5">Você trocou seu prêmio!</h1>
             <div id="buttonContainer" class="d-flex flex-column align-items-center justify-content-center mt-4">
                 <form method="POST" action="' . $BASE_URL . 'forms/engenheiro_opcoes.php" class="w-100 text-center">
                     <input type="hidden" name="opcao" value="32">
