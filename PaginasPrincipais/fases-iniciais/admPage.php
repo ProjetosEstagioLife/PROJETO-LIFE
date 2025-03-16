@@ -48,7 +48,7 @@
                             
                             foreach ($premios as $premio) {
                                         
-                                $stmt = $conn->prepare('SELECT * FROM usuario WHERE idPremio = :id');
+                                $stmt = $conn->prepare('SELECT * FROM usuario WHERE idPremio = :id ORDER BY nome');
                                 $stmt->execute([':id' => $premio['id']]);
                                 $usuarioPremio = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -57,8 +57,15 @@
                                         <td><a data-bs-toggle="modal" data-bs-target="#modalFormsPremio">'.$premio['nome'].'</a></td>
                                         <td>'.$premio['quantidade'].'</td><td>';
                                 if ($usuarioPremio) {
+                                    $nomeEchoed = false;
                                     foreach ($usuarioPremio as $usuarioPremio) {
-                                        echo $usuarioPremio['nome'] . '<br>';
+                                        if ($usuarioPremio['nome'] != "") {
+                                            echo $usuarioPremio['nome'] . '<br>';
+                                            $nomeEchoed = true;
+                                        } 
+                                    }
+                                    if (!$nomeEchoed) {
+                                        echo 'Nenhum jogador ganhou este prêmio.';
                                     }
                                 } else {
                                     echo 'Nenhum jogador ganhou este prêmio.';
