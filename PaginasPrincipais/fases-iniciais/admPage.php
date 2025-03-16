@@ -58,7 +58,7 @@
                                         <td>'.$premio['quantidade'].'</td><td>';
                                 if ($usuarioPremio) {
                                     foreach ($usuarioPremio as $usuarioPremio) {
-                                        echo $usuarioPremio['nome'] . ' ;';
+                                        echo $usuarioPremio['nome'] . '<br>';
                                     }
                                 } else {
                                     echo 'Nenhum jogador ganhou este prêmio.';
