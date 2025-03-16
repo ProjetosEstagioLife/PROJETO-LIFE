@@ -1,0 +1,40 @@
+@import url(index.css);
+@import url(style.css);
+
+main {
+    min-height: 80vh;
+}
+
+table, thead, tbody, tr, th, td {
+    border: 3px solid #993D00;
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: center;
+}
+tbody {
+    background: #fff;
+}
+thead {
+    background: #ec7a23 !important;
+    color: #fff;
+}
+
+.controlBtn {
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    background: #df6000;
+}
+
+input {
+    border-radius: 5px;
+    border: 2px solid #e46300;
+    padding: 5px;
+    transition: all ease 300ms;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #b64f00;
+    box-shadow: none;
+    transition: all ease 300ms;
+}
