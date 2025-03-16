@@ -17,8 +17,13 @@
     } elseif ($option == 2) {
         $premioId = $_POST['premioSelected'];
 
-        $stmt = $conn->prepare('UPDATE premio SET nome = :nome, quantidade = :qtd WHERE id = :id');
-        $stmt->execute([':nome' => $_POST['nome'], ':qtd' => $_POST['quantidade'], ':id' => $premioId]);
+        if ($_POST['nome'] != null) {
+            $stmt = $conn->prepare('UPDATE premio SET nome = :nome, quantidade = :qtd WHERE id = :id');
+            $stmt->execute([':nome' => $_POST['nome'], ':qtd' => $_POST['quantidade'], ':id' => $premioId]);
+        } else {
+            $stmt = $conn->prepare('UPDATE premio SET quantidade = :qtd WHERE id = :id');
+            $stmt->execute([':qtd' => $_POST['quantidade'], ':id' => $premioId]);
+        }
     } elseif ($option == 3) {
         $premioId = $_POST['premioSelected'];
 

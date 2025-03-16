@@ -89,7 +89,7 @@
                         <h1>Adicionar Prêmio</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?php echo $BASE_URL; ?>forms/processaAdm.php" method="POST">
+                    <form action="<?php echo $BASE_URL; ?>forms/processaAdm.php" method="POST" onsubmit="return confirm('Tem certeza que deseja adicionar o prêmio?');">
                         <div class="modal-body d-flex flex-column align-items-center">
                             <input type="hidden" name="opt" value="1">
                             <div id="nomeInputContainer" class="m-3 w-75 d-flex justify-content-between">
@@ -118,7 +118,7 @@
                         <h1>Alterar Prêmio</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?php echo $BASE_URL; ?>forms/processaAdm.php" method="POST">
+                    <form action="<?php echo $BASE_URL; ?>forms/processaAdm.php" method="POST" onsubmit="return confirm('Tem certeza que deseja alterar o prêmio?');">
                         <div class="modal-body">
                             <input type="hidden" name="opt" value="2">
                             <div class="d-flex flex-column justify-content-center">
