@@ -101,11 +101,11 @@
                             <input type="hidden" name="opt" value="1">
                             <div id="nomeInputContainer" class="m-3 w-75 d-flex justify-content-between">
                                 <label for="nome">Prêmio:</label>
-                                <input type="text" id="nome" name="nome">
+                                <input type="text" id="criaNome" name="nome">
                             </div>
                             <div id="quantidadeInputContainer" class="m-3 w-75 d-flex justify-content-between">
                                 <label for="quantidade">Quantidade:</label>
-                                <input type="number" id="quantidade" name="quantidade" value="1">
+                                <input type="number" id="criaQuantidade" name="quantidade" value="1">
                             </div>
                         </div>
                         <div class="modal-footer d-flex justify-content-end">
@@ -132,6 +132,7 @@
                                 <select id="premioSelect" class="form-select" name="premioSelected">
                                     <?php
                                         foreach ($premios as $premio) {
+
                                             echo '
                                                 <option value="' . $premio['id'] . '">' . $premio['nome'] . '</option>
                                             ';
@@ -193,8 +194,45 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script>
+            
+            class Premio {
+                constructor (id, nome, qtd) {
+                    this.id = id;
+                    this.nome = nome;
+                    this.qtd = qtd;
+                }
+            }
+
+            let listaPremio = [];
+
+            let premio;
+            <?php
+            
+                foreach($premios as $premio) {
+                    echo '
+                        premio = new Premio('.$premio['id'].', "'.$premio['nome'].'", '.$premio['quantidade'].');
+                        listaPremio.push(premio);
+                    ';
+                }
+
+            ?>
+
 
             function showForm() {
+                let premioSelect = document.querySelector('#premioSelect');
+                let campoNome = document.querySelector('#nome');
+                let campoQtd = document.querySelector('#quantidade');
+                let index;
+                for (let i=0; i<listaPremio.length; i++) {
+                    if (listaPremio[i].id == premioSelect.value) {
+                        index = i;
+                        break;
+                    }
+                }
+
+                campoNome.value = listaPremio[index].nome;
+                campoQtd.value = listaPremio[index].qtd;
+
                 document.querySelector('#hiddenForm').classList.remove('hidden');
                 document.querySelector('#alterPremioFooter').classList.remove('hidden');
                 document.querySelector('#hiddenForm').classList.add('d-flex');
