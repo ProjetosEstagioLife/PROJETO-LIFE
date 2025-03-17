@@ -204,34 +204,24 @@
             }
 
             let listaPremio = [];
-
             let premio;
+
             <?php
-            
                 foreach($premios as $premio) {
                     echo '
                         premio = new Premio('.$premio['id'].', "'.$premio['nome'].'", '.$premio['quantidade'].');
                         listaPremio.push(premio);
                     ';
                 }
-
             ?>
-
 
             function showForm() {
                 let premioSelect = document.querySelector('#premioSelect');
                 let campoNome = document.querySelector('#nome');
                 let campoQtd = document.querySelector('#quantidade');
-                let index;
-                for (let i=0; i<listaPremio.length; i++) {
-                    if (listaPremio[i].id == premioSelect.value) {
-                        index = i;
-                        break;
-                    }
-                }
 
-                campoNome.value = listaPremio[index].nome;
-                campoQtd.value = listaPremio[index].qtd;
+                campoNome.value = listaPremio[premioSelect.value - 1].nome;
+                campoQtd.value = listaPremio[premioSelect.value - 1].qtd;
 
                 document.querySelector('#hiddenForm').classList.remove('hidden');
                 document.querySelector('#alterPremioFooter').classList.remove('hidden');
