@@ -127,6 +127,10 @@ body {
     font-style: italic;
 }
 
+footer a, footer a:visited{
+    
+}
+
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     #chestWindow h1 {
