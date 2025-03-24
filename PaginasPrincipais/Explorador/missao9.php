@@ -11,8 +11,6 @@ date_default_timezone_set('America/Sao_Paulo');
 // Define o título da página
 $title = "Baú Misterioso";
 
-$conn = $pdo; 
-
 $stmt = $conn->prepare("SELECT * FROM premio ORDER BY id");
 $stmt->execute();
 $premiosDisponiveis = array();
@@ -116,9 +114,6 @@ $content = '
                 <h1>Você ganhou um(a)...</h1>' .
                 $message
                 .'
-
-
-</div>
             </div>
 
             <div id="transition" class="hide"></div>
