@@ -11,8 +11,6 @@ date_default_timezone_set('America/Sao_Paulo');
 // Define o título da página
 $title = "Baú Misterioso";
 
-$conn = $pdo; 
-
 $stmt = $conn->prepare("SELECT * FROM premio ORDER BY id");
 $stmt->execute();
 $premiosDisponiveis = array();
@@ -36,7 +34,7 @@ $premioUser = $stmt->fetch()['idPremio'];
 $_SESSION['premioUser'] = $premioUser;
 
 // Sorteia premio em array
-$novoPremio = $premiosDisponiveis[rand(1, count($premiosDisponiveis))];
+$novoPremio = $premiosDisponiveis[rand(1, count($premiosDisponiveis))-1];
 
 // Busca id do prêmio sorteado
 $stmt = $conn->prepare("SELECT id FROM premio WHERE nome = :nome");

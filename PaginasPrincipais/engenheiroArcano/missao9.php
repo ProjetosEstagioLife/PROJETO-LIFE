@@ -34,7 +34,7 @@ $premioUser = $stmt->fetch()['idPremio'];
 $_SESSION['premioUser'] = $premioUser;
 
 // Sorteia premio em array
-$novoPremio = $premiosDisponiveis[rand(1, count($premiosDisponiveis))];
+$novoPremio = $premiosDisponiveis[rand(1, count($premiosDisponiveis))-1];
 
 // Busca id do prêmio sorteado
 $stmt = $conn->prepare("SELECT id FROM premio WHERE nome = :nome");

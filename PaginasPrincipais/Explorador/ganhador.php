@@ -30,7 +30,7 @@ $premioUser = $stmt->fetch()['idPremio'];
 $_SESSION['premioUser'] = $premioUser;
 
 // Sorteia premio em array
-$novoPremio = $premiosDisponiveis[rand(1, count($premiosDisponiveis))];
+$novoPremio = $premiosDisponiveis[rand(1, count($premiosDisponiveis)) - 1];
 
 // Busca id do prêmio sorteado
 $stmt = $conn->prepare("SELECT id FROM premio WHERE nome = :nome");
@@ -142,18 +142,13 @@ if ($idPremioNovo == $premioUser) {
         </div>
     </div>
 </div>
+
 <section id="victoryRewardContainer" class="w-100 d-flex justify-content-center">
     <div id="victoryRewardWindow" class="d-flex flex-column align-items-center">
         <h1>Você ganhou um(a)...</h1>
         <?php echo $message; ?>
     </div>
 </section>
-
-<script>
-    function mostrarRecompensa() {
-        document.getElementById('recompensa').classList.remove('hidden');
-    }
-</script>
 
 <?php
 $content = ob_get_clean();
