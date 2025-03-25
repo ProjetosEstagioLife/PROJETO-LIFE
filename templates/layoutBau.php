@@ -1,6 +1,6 @@
 <?php
 // Inicia a sessão
-// session_start();
+session_start();
 
 // Define a Base URL correta
 $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/";
@@ -149,7 +149,7 @@ $stmt = $conn->prepare($sql);
 <?php endif; ?>
 <footer>
     <div class="container text-center">
-        <p>&copy; <?= date('Y'); ?> PROJETO LIFE. Todos os direitos reservados.</p>
+        <p>&copy; <?= date('Y'); ?> PROJETO LIFE. <a href="Página de créditos."></a></p>
     </div>
 </footer>
 

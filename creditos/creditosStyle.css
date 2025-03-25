@@ -11,7 +11,8 @@
 
 /*Estilo do body e da div que causa o glass effect*/
 body{
-    background: url("../Midias/background_menu.png") center;
+    background: url("../Midias/background_menu.png") center no-repeat;
+    background-size: cover;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #glassEffect{
@@ -125,7 +126,6 @@ main{
     text-shadow: #f95252 0 0 5px;
 }
 
-/**/
 
 #aboutContainer, #membersContainer, #technologiesContainer{
     margin: 0 auto;
@@ -147,12 +147,17 @@ main{
     font-size: 1.2rem;
 }
 
+/*Container sobre*/
+#aboutContainer p:nth-child(1){
+    margin: 5% 0 2% 0;
+}
+
+
 #membersContainer h4{
     font-size: 1.4rem;
     margin: 2% auto;
 }
-
-#membersContainer ul:not(.membersLinks){
+#membersContainer ul:not(.membersLinks ul){
     list-style: square;
     margin: 1% 0 0 2%;
 }
@@ -161,6 +166,15 @@ main{
 }
 #membersContainer li::marker{
     color: #ff0000;
+}
+#membersContainer li:not(.membersLinks li):last-child{
+    margin-bottom: 4%;
+}
+#membersContainer li:not(.membersLinks li, #membersContainer li:last-child)::after{
+    content: ";";
+}
+#membersContainer li:not(.membersLinks li):last-child::after{
+    content: ".";
 }
 .membersLinks{
     display: flex;
@@ -181,4 +195,36 @@ main{
 .membersLinks a:hover{
     color: #fff;
     text-shadow: #fe0000 2px 0 10px;
+}
+#membersContainer p:nth-child(1){
+    margin: 5% 0 2% 0;
+}
+#membersContainer p:last-child{
+    margin: 3% 0;
+}
+#membersContainer p span{
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+/*Tecnologias utilizadas*/
+#technologiesContainer p{
+    margin: 5% 0 2% 0;
+}
+#technologiesContainer ul{
+    list-style: square;
+    margin: 1% 0 0 2%;
+}
+#technologiesContainer li{
+    margin-top: 1.5%;
+}
+#technologiesContainer li::marker{
+    color: #ff0000;
+    margin-top: 1.5%;
+}
+#technologiesContainer li:not( #technologiesContainer li:last-child)::after{
+    content: ";";
+}
+#technologiesContainer li:last-child::after{
+    content: ".";
 }
