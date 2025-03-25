@@ -54,6 +54,10 @@ $vidasDisponiveis = resetVidasDiarias($conn, $userId);
 // Obtém a opção selecionada
 $opcao = $_POST['opcao'] ?? null;
 
+echo $opcao;
+
+echo $opcao == 40;
+
 // Verifica se a opção foi selecionada
 if ($opcao !== null && $opcao !== "") {
     // Verifica se o jogador tem vidas suficientes para avançar
@@ -271,14 +275,45 @@ if ($opcao !== null && $opcao !== "") {
             $novaFase = 0;
             $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
             break;
-            case 32:
-                $novaFase = 0;
-                $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
-                $stmt = $conn->prepare($sql);
-                $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
-                $stmt->execute();
-                $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
-                break;
+        case 32:
+            $novaFase = 0;
+            $sql = "UPDATE usuario SET vidas_disponiveis = vidas_disponiveis - 1 WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+            $redirectUrl = "PaginasPrincipais/fases-iniciais/escolhaPersonagem.php";
+            break;
+        case 40:
+            $novaFase = 10;
+            $avancaFase = true;
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/missao10.php";
+            break;
+        case 41:
+            $novaFase = 11;
+            $avancaFase = true;
+
+                        
+            $premioUser = $_SESSION['premioUser'];
+            $idPremioNovo = $_SESSION['idPremio'];
+
+                        
+            // Aumenta a quantidade do prêmio que estava com o usuário.
+            $stmt = $conn->prepare("UPDATE premio SET quantidade = quantidade + 1 WHERE id = :id");
+            $stmt->execute([':id' => $premioUser]);
+
+            // Diminui a quantidade do novo prêmio do usuário.
+            $stmt = $conn->prepare("UPDATE premio SET quantidade = quantidade - 1 WHERE id = :id");
+            $stmt->execute([':id' => $idPremioNovo]);
+
+            $userId = $_SESSION['user_id'];
+
+            // Muda o registro do prêmio atual do usuário.
+            $stmt = $conn->prepare("UPDATE usuario SET idPremio = :idp WHERE id = :idu");
+            $stmt->execute([':idp' => $idPremioNovo, ':idu' => $userId]);
+
+
+            $redirectUrl = "PaginasPrincipais/engenheiroArcano/missao11.php";
+            break;
         default:
             echo "Opção inválida!";
             exit();

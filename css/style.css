@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
+#victoryRewardWindow {
+    width: fit-content;
+    background: #e9e9e9aa;
+    border: 4px solid #000;
+    border-radius: 25px;
+    padding: 2em;
+    width: 60vw;
+}
+
+
+#victoryRewardWindow .trocaBtn {
+    border: none;
+    border-radius: 10px;
+    background: #ff4500;
+    color: #fff;
+}
+#victoryRewardWindow .trocaBtn:hover {
+    background: #d63c00;
+    transition: background 0.3s ease;
+}
+
+#victoryRewardWindow #returnButton {
+    padding: 10px;
+    border-radius: 7px;
+}
+
+#victoryRewardWindow h1 {
+    font-size: 1.5em;
+}
+
+#victoryRewardWindow h2 {
+    margin: 1em 0;
+    font-size: 4em;
+}
+
 /* Mini reset */
 * {
     font-size: 100%;
@@ -271,6 +306,12 @@ header {
     }
 }
 @media (max-width: 768px) {
+    #victoryRewardWindow {
+        width: 90vw;
+    }
+    #victoryRewardWindow h2 {
+        font-size: 2em;
+    }
     #welcomeWindow h1 {
         font-size: 3rem;
         width: 90%;

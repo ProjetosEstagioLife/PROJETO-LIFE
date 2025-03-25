@@ -12,7 +12,15 @@ $user = $stmt->fetch();
 
 if ($user && $senha === $user['senha']) {
     $_SESSION['user_id'] = $user['id']; 
-    header("Location: ../PaginasPrincipais/fases-iniciais/regulamentos.php");
+    $user_role = $user['adm'];
+    $_SESSION['user_Role'] = $user_role;
+
+    if ($user_role == 0) {
+        header("Location: ../PaginasPrincipais/fases-iniciais/regulamentos.php");
+    } else {
+        header("Location: ../PaginasPrincipais/fases-iniciais/admPage.php");
+    }
+
     exit();
 } else {
     $_SESSION['error_message'] = "Usuário ou senha incorretos. Tente novamente.";
