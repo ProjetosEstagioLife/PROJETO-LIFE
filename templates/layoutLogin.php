@@ -1,6 +1,8 @@
 <?php
-  
-  session_start();
+// Inicia a sessão caso ainda não tenha sido iniciada
+if(!isset($_SESSION))  
+    session_start(); 
+
   $BASE_URL = "http://" . $_SERVER['SERVER_NAME'] . "/PROJETO-LIFE-1/";
 ?>
 <!DOCTYPE html>
