@@ -1,99 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Créditos ao Projeto</title>
-        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="creditosStyle.css">
     </head>
-    <body>
-        <header id="mainHeaderContainer">
-            <div id="titleContainer">
-                <h1>O Alvorecer de Novas Conexões - Créditos</h1>
-                <h2>Uma parceria entre <span id="fatecTitle">Fatec Marília</span> e <span id="lifeTitle">Life</span></h2>
-            </div>
-            <div id="logosContainer" class="notscrolledLogo">
-                <img src="../Midias/Logo black.png" alt="Logo da Life">
-                <img src="../Midias/Logo Fatec.png" alt="Logo da Fatec">
+    <body class="bg-light">
+
+        <!-- Cabeçalho -->
+        <header id="mainHeaderContainer" class="text-center py-4">
+            <div class="container">
+                <div id="titleContainer">
+                    <h1 class="fs-2 fs-md-1">O Alvorecer de Novas Conexões - Créditos</h1>
+                    <h2 class="fs-5 fs-md-4">Uma parceria entre <span id="fatecTitle">Fatec Marília</span> e <span id="lifeTitle">Life</span></h2>
+                </div>
             </div>
         </header>
-        <nav id="sessionsContainer">
-            <a href="#aboutContainer">Sobre o Projeto</a>
-            <a href="#membersContainer">Integrantes</a>
-            <a href="#technologiesContainer">Ferramentas e Tecnologias</a>
+
+        <!-- Navbar Responsiva -->
+        <nav id="sessionsContainer" class="navbar navbar-expand-lg">
+            <div class="container">
+                <a id="logosContainer" class="navbar-brand" href="#">
+                    <img src="../Midias/Logo black.png" alt="Logo da Life">
+                    <img src="../Midias/Logo Fatec.png" alt="Logo da Fatec">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#SessionsList">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="SessionsList">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#aboutContainer">Sobre o Projeto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#membersContainer">Integrantes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#technologiesContainer">Tecnologias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../PaginasPrincipais/fases-iniciais/index.php">Voltar</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <main>
-            <!-- Container "Sobre o Projeto"-->
-            <section id="aboutContainer">
-                <h3>Sobre o Projeto</h3>
+
+        <!-- Conteúdo Principal -->
+        <main class="container py-4">
+            <!-- Sobre o Projeto -->
+            <section id="aboutContainer" class="mb-5">
+                <h3 class="mb-3">Sobre o Projeto</h3>
                 <article>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius totam repellendus, impedit, amet facere inventore quidem enim consequatur exercitationem unde doloremque facilis cumque quod consequuntur at aperiam hic? Explicabo, ipsam!</p>
                 </article>
             </section>
+
             <div class="divLine"></div>
-            <!-- Container com os "Integrantes" do projeto -->
-            <section id="membersContainer">
-                <h3>Integrantes do Projeto</h3>
+
+            <!-- Integrantes -->
+            <section id="membersContainer" class="mb-5">
+                <h3 class="mb-3">Integrantes do Projeto</h3>
                 <article>
-                    <p>Aqui estão todas as pessoas que participaram do projeto: </p>
+                    <p>Aqui estão todas as pessoas que participaram do projeto:</p>
                     <h4>Alunos da Fatec</h4>
-                    <ul>
-                        <li>Leonardo Fernandes Ronchi: Back-End e Front-End</li>
-                            <ul class="membersLinks">
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item"><span>Leonardo Fernandes Ronchi</span>: Back-End e Front-End;
+                            <ul class="mt-2 membersLinks">
                                 <li><a href="https://github.com/leonardoFernandesRonchi" target="_blank">GitHub</a></li>
                                 <li><a href="https://portfolio-leonardo-ronchi.vercel.app" target="_blank">Portfolio</a></li>
                                 <li><a href="https://www.linkedin.com/in/leonardo-fernandes-ronchi-7985452b4/" target="_blank">LinkedIn</a></li>
                             </ul>
-                        <li>Marcos Daniel da Silva Lima: Front-End e Design e UI/UX</li>
-                            <ul class="membersLinks">
+                        </li>
+                        <li class="list-group-item"><span>Marcos Daniel da Silva Lima</span>: Front-End, Design e UI/UX;
+                            <ul class="mt-2 membersLinks">
                                 <li><a href="https://github.com/mdsl1" target="_blank">GitHub</a></li>
                                 <li><a href="https://mdsl1.github.io/Portfolio-FrontEnd/" target="_blank">Portfolio</a></li>
                                 <li><a href="https://www.linkedin.com/in/marcos-daniel-da-silva-lima-091b11260/" target="_blank">LinkedIn</a></li>
                             </ul>
-                        <li>Pedro Guimarães Bastos: Front-End e Back-End</li>
-                            <ul class="membersLinks">
+                        </li>
+                        <li class="list-group-item"><span>Pedro Guimarães Bastos</span>: Front-End e Back-End;
+                            <ul class="mt-2 membersLinks">
                                 <li><a href="https://github.com/Pedroguibas" target="_blank">GitHub</a></li>
                                 <li><a href="https://portfolio-beta-topaz-94.vercel.app" target="_blank">Portfolio</a></li>
                                 <li><a href="https://www.linkedin.com/in/pedro-bastos-4275b2243/" target="_blank">LinkedIn</a></li>
                             </ul>
-                        <li>Jéssica Cristina Gabriel de Oliveira: Design e UI/UX</li>
-                            <ul class="membersLinks">
+                        </li>
+                        <li class="list-group-item"><span>Jéssica Cristina Gabriel de Oliveira</span>: Design e UI/UX;
+                            <ul class="mt-2 membersLinks">
                                 <li><a href="https://github.com/Jessica-desing" target="_blank">GitHub</a></li>
                                 <li><a href="https://www.linkedin.com/in/jéssica-cristina-gabriel-de-oliveira-2ab637226/" target="_blank">LinkedIn</a></li>
                             </ul>
-                        <li>Prof. Querino: Suporte ao Projeto</li>
+                        </li>
+                        <li class="list-group-item"><span>Prof. Querino</span>: Suporte ao Projeto.
+                        </li>
                     </ul>
+
                     <h4>Colaboradores da Life</h4>
-                    <ul>
-                        <li>Janaína Souza: Ideia e Concepção, Design e UI/UX e Supervisão</li>
-                        <li>Adilson Adorni: Validação de Dados e Supervisão</li>
-                        <li>Melissa: Design e UI/UX</li>
-                        <li>Você, jogador que fez parte desta jornada</li>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item"><span>Janaína Souza</span>: Ideia e Concepção, Design e UI/UX e Supervisão;</li>
+                        <li class="list-group-item"><span>Adilson Adorni</span>: Validação de Dados e Supervisão;</li>
+                        <li class="list-group-item"><span>Melissa</span>: Design e UI/UX;</li>
+                        <li class="list-group-item"><span>Você, jogador que fez parte desta jornada.</span></li>
                     </ul>
-                    <p><span>Agradecemos à todos que fizeram esse jogo acontecer!!</span></p>
+
+                    <p class="mt-3"><strong>Agradecemos a todos que fizeram esse jogo acontecer!!</strong></p>
                 </article>
             </section>
+
             <div class="divLine"></div>
-            <!-- Container com as "Tecnologias" utilizadas -->
-            <section id="technologiesContainer">
-                <h3>Ferramentas e Tecnologias Utilizadas</h3>
+
+            <!-- Tecnologias -->
+            <section id="technologiesContainer" class="mb-5">
+                <h3 class="mb-3">Ferramentas e Tecnologias Utilizadas</h3>
                 <article>
-                    <p>Aqui estão listadas todas as ferramentas e tecnologias utilizadas para o desenvolvimento desse projeto:</p>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Javascript</li>
-                        <li>PHP</li>
-                        <li>Bootstrap</li>
-                        <li>API REST</li>
+                    <p>Essas são as ferramentas e tecnologias utilizadas:</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">HTML</li>
+                        <li class="list-group-item">CSS</li>
+                        <li class="list-group-item">JavaScript</li>
+                        <li class="list-group-item">PHP</li>
+                        <li class="list-group-item">Bootstrap</li>
+                        <li class="list-group-item">API REST</li>
                     </ul>
                 </article>
             </section>
+
             <div class="divLine"></div>
         </main>
-        <footer>
-            <p>Copyright 2025 - Life. Todos os direitos reservados.</p>
+
+        <!-- Rodapé -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p class="mb-0">&copy; 2025 Life. Todos os direitos reservados.</p>
         </footer>
+        
+        <!-- Div para glass effect -->
         <div id="glassEffect"></div>
-        <script src="creditosScript.js"></script>
+
+
+        <!-- Script Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

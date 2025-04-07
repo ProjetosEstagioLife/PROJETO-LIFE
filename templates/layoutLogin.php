@@ -28,7 +28,7 @@ if(!isset($_SESSION))
     </main>
 
     <footer>
-        <p>Copyright 2025 - Life. Todos os direitos reservados.</p>
+        <p>Copyright 2025 - Life. <a href="<?= $BASE_URL ?>creditos/creditos.html">Clique aqui para ver os créditos</a>.</p>
     </footer>
 
     <!-- Scripts -->

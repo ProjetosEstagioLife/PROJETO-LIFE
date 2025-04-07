@@ -130,9 +130,10 @@
                             <input type="hidden" name="opt" value="2">
                             <div class="d-flex flex-column justify-content-center">
                                 <select id="premioSelect" class="form-select" name="premioSelected">
+                                    <option value="999">Selecione um valor</option>
                                     <?php
                                         foreach ($premios as $premio) {
-
+                                            
                                             echo '
                                                 <option value="' . $premio['id'] . '">' . $premio['nome'] . '</option>
                                             ';
@@ -205,7 +206,7 @@
 
             let listaPremio = [];
             let premio;
-
+            premio = new Premio(0, "", "");
             <?php
                 foreach($premios as $premio) {
                     echo '
@@ -220,6 +221,7 @@
                 let campoNome = document.querySelector('#nome');
                 let campoQtd = document.querySelector('#quantidade');
 
+                console.log("Selecionou");
                 campoNome.value = listaPremio[premioSelect.value - 1].nome;
                 campoQtd.value = listaPremio[premioSelect.value - 1].qtd;
 
@@ -229,7 +231,7 @@
             }
 
             document.getElementById('premioSelect').addEventListener('change', showForm);
-            
+            showForm();
         </script>
     </body>
 </html>
